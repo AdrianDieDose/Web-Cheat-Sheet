@@ -1,0 +1,920 @@
+Css 1 Selectors:
+
+h2 {
+		                            Der obere teil also h2 nennt man selector!
+}
+
+<p style="color: red;"></p>         Css inline kann benutzt werden wenn etwas schnell schönn gemacht werden soll aber man sollte lieber eine seperate .css Datei erstellen.
+
+
+
+
+<head>       
+  <style>
+  p {
+  font-family: Arial;               Kann im head benutzt werden um auch in einer html datei schnell verschönern zu können aber wie gesgat besser in einer .css
+  }
+  </style>
+</head>
+
+
+
+
+<link> Um die css datei mit der html datei zu verbinden
+<link href="./style.css" type="text/css" rel="stylesheet"> href attribute um zur Datei zu führen, type beschreibt den dokumententyp mit dem verbunden wird und rel beschreibt die verbindung zwischen html und css und dies ist ein stylesheet
+
+
+.title {}							         Classen müssen mit einem punk . bezogen werden und überschrieben zb h1
+  
+#title {}					                 Id attribute müssen mit einem Hashtag # bezogen werden
+  
+In Css werden Classen und tags von IDs überschrieben die reihenfolge sieht so aus= ID>Class>Tag.  (Classen sollten allgemein bezogen werden auf größere abschnitte des codes während ids nur auf einzelne elemente bestimmt sind)
+
+Es sollte best möglichst immer die kleinste wichtigkeit benutzt (zb tags) werden und wenn das nicht geht ein step hoch (class) und zum sehr genau sein (ID)
+
+
+h1.title {}					                  Chains überschrieben normale class selectoren und in dem besispiel werden nur h1 headings mit der klasse titel gestyled und nicht zb <p> mit der classe title
+  
+.title h1 {	}				                  Es kann auch untergeordnete sachen bezogen werden wenn zb ein div mit classe .title mehrere h1 hat werdene dann nur diese bezogen
+
+h1 { }                                        Da .title h1 mehr spezifisch ist wird dies überschrieben aber beinhaltet alle h1 die nicht im div mit classe .title sind
+
+h5 {color: rebeccapurple; !important;}         !important überscheibt alle ids oder spezifischen elemente aber sollte nur im größten notfall benutzt werden. es ist besser sich mal das problem anzuschauen.
+
+p {}						                  Praktisch ist es mehrere sachen in ein selektor zu bringen um nicht 2 mal die gleiche farbe aufzuschreiben. Dies kann mit einem komma gemacht werden.
+
+html {}				                          Mann kann große tag abschnitte wie div nehmen und diese in den selektoren stecken um sich schreiben zu sparen und code übersichtlich zu gestalten
+
+
+English summery:
+
+Throughout this lesson, you learned how to select HTML elements with CSS and apply styles to them. Let’s review what you learned:
+
+CSS can change the look of HTML elements. In order to do this, CSS must select HTML elements, then apply styles to them.
+
+CSS can select HTML elements by tag, class, or ID.
+
+Multiple CSS classes can be applied to one HTML element.
+
+Classes can be reusable, while IDs can only be used once.
+
+IDs are more specific than classes, and classes are more specific than tags. That means IDs will override any styles from a class, and classes will override any styles from a tag selector.
+
+Multiple selectors can be chained together to select an element. This raises the specificity, but can be necessary.
+
+Nested elements can be selected by separating selectors with a space.
+
+The !important flag will override any style, however it should almost never be used, as it is extremely difficult to override.
+
+Multiple unrelated selectors can receive the same styles by separating the selector names with commas
+
+
+
+
+
+
+
+
+
+
+
+
+
+Css 2 Visual Rules:
+
+h1 {
+  property: value;                                                                        Diese nennt man declaration die aus einer property und einer value besteht
+}
+
+
+h1 {
+  color: blue;                                                                            Den ganze code hier nennt man rule oder rule set
+}
+
+declaration typeface: font-family: "Georgia";                                             Ist dafür zuständig die schrifart zu ändern. Es sollten max 3 schriften benutzt werden um ladezeiten zu veringern.
+declaration size: font-size: 18p;                                                         Ist zustäding um schriftgröße zu ändern.
+declaration weight: font-weight: bold,normal;                                             Ist um den text dünn oder dick darzustellen. normal value ist zustädig um bold zu neutralliesieren wenn nötig.
+declaration align: text-align: left,center,right;                                         Um text zum tochterelement zu zentrieren.
+
+declaration color: color: red;                                                            Um im vordergrund die farbe zu ändern also zb den text
+declaration background-color: backround-color: black;                                     Um die background farbe zu ändern also den hintergrund indem das element drinnen ist.
+
+declaration opacity: opacity: 0-1;                                                        Um elemente durchsichtig zu gestalten um ein coolen overlay effect zu machen.
+declaration Background img: background-image: url("catogery/coolesbild.jpg")              Setzt ein hintergrund Bild für die Website
+
+-------------------------------------------------------------------------------------
+  /* Old browsers */
+  background: #ECA8A8;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(-45deg, #35577D, #ECA8A8);                          Alternativen für andere browser
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(-80deg, #35577D, #ECA8A8);                                  Nützlich um hintergrund-verläufe zu machen
+-------------------------------------------------------------------------------------
+
+English summery:
+
+CSS declarations are structured into property and value pairs.
+
+The font-family property defines the typeface of an element.
+
+font-size controls the size of text displayed.
+
+font-weight defines how thin or thick text is displayed.
+
+The text-align property places text in the left, right, or center of its parent container.
+
+Text can have two different color attributes: color and background-color. color defines the color of the text, while background-color defines the color behind the text.
+
+CSS can make an element transparent with the opacity property.
+
+CSS can also set the background of an element to an image with the background-image property.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Css 3 The Box Model:
+
+height: 10px; and width: 20px;            Ist eine declaration das zb text die höhe und breite gibt und kann mit px angegeben werden das ein Laptop ausfüllt aber ein Handy overflowt
+
+
+border: width style color;                Ist der Kasten oder Rahmen in der das element eingehüllt ist
+(border-top
+border-right
+border-bottom                             Kann die verschiedenen seiten vom Border definieren
+border-left)
+
+width:                                    Kann in pixel angegeben werden oder in thin, medium, thick
+style:                                    Kann 10 verschriedene styles rendern wie none, dotted, soild https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#Values
+color:                                    Gibt die Farbe an vom border.
+
+border-radius: 10px (100%)                Gibt den radius an um die border rund zu machen.
+
+
+padding: 10px 20px 100px 3px;             Padding ist der freiraum zwischen content und border / Padding wird im Uhrzeigersinn zugeordnet kann aber mit nur 2 angaben bennant werden wenn oben unten und rechts links gleich ist angaben werden wie zb hier: padding: 10px 20px;
+(padding-top
+padding-right
+padding-bottom                            Kann die verschiedenen seiten vom padding definieren
+padding-left)
+
+
+margin: 20px 20px 20px 20px               Margin ist der platzt hinter der box. margin gibt den platzt davon an / Kann auch in einer declaration im Uhrzeigersinn bennant werden oder in 2.
+margin: 0 auto;                           Auto setzt rechts und link automatisch der seite nach ein. es muss eine width eingegeben werden damit auto funktioniert
+(margin-top
+margin-right
+margin-bottom
+margin-left)
+Extra tipp: Margins kollabieren oben und unten und der größere margin setzt den abstand. Bei rechts und links addieren sich die zwei margins.
+
+
+min-width: 200px;                         Gibt die maximale und minimale breite vom selector an wenn das browser fenster verstellt wird.
+max-width: 400px;
+
+min-height: 200px;                        Gibt die maximale und minimale höhe vom selector an wenn das browser fenster verstellt wird.
+max-height: 400px;
+
+overflow: scroll, hidden, visible;        Dient die dem selector und den kinder von z.b div vorm overflowen abzuhalten.
+
+* {
+  margin: 0;
+  padding: 0;                             Damit werden die default values von css aka html zurückgesetzt und können mit einem clean css angefangen werden.
+}
+
+visibility: hidden, visible;              Wird content unsichbar gemacht aber es bleibt troztdem ein leerer spot da ausßer man benutzt (eins runter)
+display: none;
+
+
+English summery:
+
+The box model comprises a set of properties used to create space around and between HTML elements.
+
+The height and width of a content area can be set in pixels or percentage.
+
+Borders surround the content area and padding of an element. The color, style, and thickness of a border can be set with CSS properties.
+
+Padding is the space between the content area and the border. It can be set in pixels or percent.
+
+Margin is the amount of spacing outside of an element’s border.
+
+Horizontal margins add, so the total space between the borders of adjacent elements is equal to the sum of the right margin of one element and the left margin of the adjacent element.
+
+Vertical margins collapse, so the space between vertically adjacent elements is equal to the larger margin.
+
+margin: 0 auto horizontally centers an element inside of its parent content area, if it has a width.
+
+The overflow property can be set to display, hide, or scroll, and dictates how HTML will render content that overflows its parent’s content area.
+
+The visibility property can hide or show elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Css 4 Changing the Box Model:
+
+* { box-sizing: border-box; }           Sollte immer angegeben werden damit die height und width gleich angepasst wird und immer konstant bleibt sonst addiert sich die box mit 1px border 20 px padding usw..
+          
+  
+  
+English summary:
+  
+The box-sizing property controls the box model used by the browser.
+  
+The default value of the box-sizing property is content-box.
+
+The value for the new box model is border-box.
+
+The border-box model is not affected by border thickness or padding.
+}          
+
+
+
+
+
+
+
+
+
+
+
+Css 5 Flow of html:
+
+position: static,       position declaration positioniert das element und hat folgene values:   static ist default und tut nix an de position
+relative,               relative positioniert das element relativ zum static doch muss erst mit mind 2 offset properties wie top, bottom, left, right angegeben werden. Dies kann mit px ems und prozenten angegeben werden.
+absolute,               absolute igonoriert alle elemente und tut so als wäre da nix. Das element wird positioniert relative zu seinem nähsten eltern element.
+fixed:                  fixed ignoriert elmente wie absolute doch bewegt sich mit dem scrollen einer webpage (wird benutzt bei navigation einer website
+z-index: 10;            Gibt die reihenfolge an in dem die elemente sich befinden 10 ist vorne und 0 hinten. Position darf nicht auf static gestellt sein weil es sonst nicht funktioniert.
+
+Inline                  Inline sind standartmäßig vom display <em> <strong> <a> und diese ändern keine elemente und können inline sein ohne sachen zu bewegen.
+display:                Ändert default values vom display.
+inline,                 Diese value declaration ist dafür zusändig sachen die nicht Inline sind Inline zu machen.
+block,                  Diese value declaration macht ein element zu einem block element wie ein div oder h1 usw (<h1> through <h6>), <p>, <div> and <footer>)
+inline-block;           Diese value lässt den selector wie eine inline und ein block rendern und ist dann auf einer linie und in blöcken unterteilt
+
+float: left,right;      Lässt das element ganz rechts oder ganz links erscheinen aber es muss die breite angegeben werden sonst erkennt man kein unterschied
+
+clear:                  Diese declaration sagt aus was passieren soll wenn mehrere elemente aufeinander treffen
+left —                  the left side of the element will not touch any other element within the same containing element.
+right —                 the right side of the element will not touch any other element within the same containing element.
+both —                  neither side of the element will touch any other element within the same containing element.
+none —                  the element can touch either side.
+
+
+English summary:
+
+The position property allows you to specify the position of an element in three different ways.
+
+When set to relative, an element’s position is relative to its default position on the page.
+
+When set to absolute, an element’s position is relative to its closest positioned parent element. It can be pinned to any part of the web page, but the element will still move with the rest of the document when the page is scrolled.
+
+When set to fixed, an element’s position can be pinned to any part of the web page. The element will remain in view no matter what.
+
+The z-index of an element specifies how far back or how far forward an element appears on the page when it overlaps other elements.
+
+The display property allows you control how an element flows vertically and horizontally a document.
+
+inline elements take up as little space as possible, and they cannot have manually-adjusted width or height.
+
+block elements take up the width of their container and can have manually-adjusted heights.
+
+inline-block elements can have set width and height, but they can also appear next to each other and do not take up their entire container width.
+
+The float property can move elements as far left or as far right as possible on a web page.
+
+You can clear an element’s left or right side (or both) using the clear property.
+
+
+
+
+
+
+
+
+
+
+
+Css lesson 6 COLOR:
+
+
+color: Red;                  Farbe für Vordergrund
+background-color: Blue;      Farbe für den hintergrund
+
+#000000                      Hex colors      
+rgb(139, 69, 19)             RGB colors      Es sollte am besten nur einer der farbarten benutzt werden im ganzen css. In hex oder rgb sind sehr viele verschiedenen möglichkeiten um die Farben sehr genau anzupassen.
+hsl(120, 60%, 70%)           Hue, Saturation und Lightness. Dies ist die reihenfolge von hsl. Die erste Zahl bezieht sich auf die hue also 360 grad eines Farbkreises währen die Zweite Zahl sich wie intensiv die fabre ist näher zur Mitte der Farbkreises desto weniger intensiv, Grauer und weiter desto mehr intensiv. Die Dritte Zahl ist die helligkeit bei 0% weiter zu Schwarz und dunkler und 100% weiter richtung Weiß also heller.
+
+rgba(139, 69, 19, 0,1)       Das a steht für alpha und gibt die transparenz an. 0 - 1.0
+hsla(120, 60%, 70%, 0,5)     Das a steht für alpha und gibt die transparenz an. 0 - 1.0
+color: transparent;          Stellt die Farbe auf transparent.
+
+
+English summary:
+
+There are four ways to represent color in CSS:
+
+Named colors — there are 147 named colors, which you can review here.
+
+Hexadecimal or hex colors
+
+Hexadecimal is a number system with has sixteen digits, 0 to 9 followed by “A” to “F”.
+Hex values always begin with # and specify values of red, blue and green using hexademical numbers such as #23F41A.
+
+RGB
+RGB colors use the rgb() syntax with one value for red, one value for blue and one value for green.
+RGB values range from 0 to 255 and look like this: rgb(7, 210, 50).
+
+HSL
+HSL stands for hue (the color itself), saturation (the intensity of the color), and lightness (how light or dark a color is).
+Hue ranges from 0 to 360 and saturation and lightness are both represented as percentages like this: hsl(200, 20%, 50%).
+
+You can add opacity to color in RGB and HSL by adding a fourth value, a, which is represented as a percentage.
+
+
+
+
+
+
+
+
+
+
+
+Css lesson 7 Typography:
+
+
+font-family: "Georgia";                Mit dieser declaration kann man das typeface aka schriftart ändern. Max 2-3 pro seite.
+
+font-weight: bold(100-900);            Bewirkt das Text dicker oder dünner wird. Headings haben oft mehr als nur normal weight. Es kann das weight auch mit 100 bis 900 gesetzt werden wobei 900 deep bold ist.
+
+font-style: itallic;                   Kann Text zu itallic machen. Normalerweise ist die value normal.
+
+word-spacing: 0.3em;                   Ändert den abstand zwischen Worten.
+
+letter-spacing: 0.3em;                 Ändert den abstand zwischen Buchstaben.
+
+text-transform: uppercase,lowercase;   Kann de Buchstaben caps machen oder alle klein gestalten.
+
+text-align: left, center, right;       Richtet Text jenachdem wo man es haben will aus.
+
+line-height: 1.4;                      Ändert den platzt überm text aka leading und es sollte am besten eine unitless zahl genommen werden.
+
+sarif, sans sarif                      Sarif hat ändungen an den buchstaben wobei sans serif abgefalcht ist.
+
+font-family: "Garamond", "Times", serif;              Setzt die schrift garamond als hauptschirift und die darauf folgenden als backup.
+https://fonts.google.com                              Beste um fonts zu bekommen und kann mehrere weights mitnehmen.
+
+@font-face                                            Kann alternetiv benutzt werden um schriften in .css einzufügen dafür gibt man den googele font link oben ein und kopiert die sachen die zum font gehören und fügt diese oben ins stylesheet ein.
+
+@font-face {
+font-family: "Roboto";
+src: url(fonts/Roboto.woff2) format('woff2'),         So kann man fonts anweden im selber directory. Woff2 wird wahrschelich standart sein da es schnell und kleine datei grösse hat.
+     url(fonts/Roboto.woff) format('woff'),
+     url(fonts/Roboto.tff) format('truetype');
+}
+
+
+English summary:
+
+Typography is the art of arranging text on a page.
+
+Text can appear in any number of weights, with the font-weight property.
+
+Text can appear in italics with the font-style property.
+
+The vertical spacing between lines of text can be modified with the line-height property.
+
+Serif fonts have extra details on the ends of each letter. Sans-Serif fonts do not.
+
+Fallback fonts are used when a certain font is not installed on a user’s computer.
+
+Google Fonts provides free fonts that can be used in an HTML file with the <link> tag or the @font-face property.
+
+Local fonts can be added to a document with the @font-face property and the path to the font’s source.
+
+The word-spacing property changes how far apart individual words are.
+
+The letter-spacing property changes how far apart individual letters are.
+
+The text-align property changes the horizontal alignment of text.
+
+
+
+
+
+
+
+
+
+
+
+Css lesson 8 Grids:
+
+diplay: grid, inline-grid;                             Mit diesem declaration können grids die ein container haben und items beinhalten gerided werden.
+
+grid-template-columns: 20px 50% 200px;                 Mit dieser declaration kann man die breite der säulen vom grid einstellen. Es gehen prozente oder px aber für prozente muss die width vom container gegeben werden zb 1000px und dann das column 20%.
+grid-template-rows: 200px 30% 10%;                     Damit werden die reihen eines grids festgelegt und wie oben bezieht sich die prozente auf die höhe des grids.
+grid-template: 200px 30% 10% / 20px 50% 200px;         Hier können rows und colums in einer declaration fesgelegt werden. Und wie für oben gilt das gleiche dafür.
+
+fr (Einheit Fraktion)                                  Diese einheit ist extra für grids gemacht um diese in gleichmäßige teile zu unterteilen  wenn zum beispiel 3 rows da, sind und man jetzt 1fr 1fr 1fr hat und die höhe ist 300px dann werden die 300px auf drei unterteilt also 100px.
+
+grid-template: repeat(3, 1fr) / 20% 1fr 20px;          Repeat ist eine funktion für den grid um mehrere reihen einfach zu erstellen. Hier würde dann die erste row 20% groß sein die zweite 1fr und die dritte 20px.
+
+grid-template: 100px minmax(100px, 500px) / 20px;      Mit der funktion minmax kann die zweite row wie im bespiel wenn das fenster kleiner oder größer wird die größe ändern hier wäre die 1 row mind 100px und max 500px. Die erste row bleibt 100px. 
+                                                       WIDTH MUSS DAFÜR GELÖSCHT SEIN. Oder height wenn man columns macht.
+
+grid-gap: 10px 20px;                                   Mit grid-gap kann platz zwischen den rows und columns geschaffen werden wobei aber nur im grid der platzt gemacht wird zb mit 5 rows und 3 columns werden dann 3 platzhalter von oben nach unten gemacht und 2 von links nach rechts. Es sollte beachtet werden das die platzhalter die width einehmen deswegen am besten die width mitberechnen,            
+grid-row-gap: 10px;                                    Stellt die gaps zwischen den rows ein.
+grid-column-gap: 20px;                                 Stellt die gaps zwischen den columns ein.
+
+grid-row-start: 1;                                     Hiermit kann man innere grid elemente mehrere reihen einnehmen lassen. Diese starten immer mit der kleinsten zahl.
+grid-row-end: 6;                                       Hier wird angeben wie viele grid reihen (lines) eingenommen werden sollen. Die lines sind 1 bis 6 wenn es 5 rows gibt und es wird 6 abgegeben wenn man die 5 reihe mit einnehmen will.
+grid-row: 1 / 6;                                       Vereinfacht grid row start und end.
+
+grid-column-start: 2;                                  Wie Oben wird diese declaration benutzt um den start einer säule zu definiert.
+grid-column-end: 7;                                    Hiermit wird das ende der Säule definiert.
+grid-column: 2 / span 7;                               Vereinfachung von column start und end und hat das keyword span der aussagt das dass column über 7 säulen gehen soll. Das heißt es beginnt bei säule 2 und ist 7 säulen lang. Span kann auch in rows benutzt werden.
+
+grid-area: 1 / 2 / span 6 / span 7;                    Dies Vereinfacht alle anderen grid starts und ends. Es sollte am besten immer span benutzt werden um nicht richtiges einschätzen von grid größe zu vermeinden.
+Reihenfolge: grid-row-start / 
+             grid-column-start / 
+			 grid-row-end / 
+			 grid-column-end;
+
+
+
+
+
+English summery:
+
+grid-template-columns defines the number and sizes of the columns of the grid
+
+grid-template-rows defines the number and sizes of the rows of the grid
+
+grid-template is a shorthand for defining both grid-template-columns and grid-template-rows in one line
+
+grid-gap puts blank space between rows and/or columns of the grid
+
+grid-row-start and grid-row-end makes elements span certain rows of the grid
+
+grid-column-start and grid-column-end makes elements span certain columns of the grid
+
+grid-area is a shorthand for grid-row-start, grid-column-start, grid-row-end, and grid-column-end, all in one line
+
+
+
+
+
+
+
+
+
+
+Css lesson 9 Advanced Grids:
+
+grid-template-areas: "header header"            Grid-template-areas erstellt einfach arenale für die verschiedenen container von html.
+                     "nav nav"                  Dies ist jetzt 2 säulen mit 4 reihen.
+					 "left right"
+					 "footer footer"
+
+header {
+grid-area: header;                              Hier wird die template area mit dem header verbunden.
+}
+
+grid axen:                                      Grid axen sagen aus das säulen or block von oben nach unten gehen und reihen or inline von links nach rechts.
+          column (or block)                             Oben nach unten
+		  row    (or inline)                            Links nach rechts.
+
+
+justify-items:                                  Justify items positioniert elemente nach ihren rows aka inlines an also links nach rechts
+               start                                    Richtet das item nach links vom grid aus.
+               end                                      Richtet das item nach rechts vom grid aus.
+               center                                   Richtet das item nach Center vom grid aus.
+               stretch                                  Strecht das item zum grid an.
+
+justify-content:                                Justify content positioniert das GANZE grid in der row axe entlang.
+               start                                    Richtet das grid nach links aus.
+			   end                                      Richtet das grid nach rechts aus.
+			   center                                   Centriert das grid horizontal.
+			   stretch                                  Strecht die items im container horizontal um die größe des grids zu erweitern
+			   space-around                             Fügt platz ums grid element rum. Was was in doppelt so viel freiraum resultiert.
+			   space-between                            Fügt gleichmäßigen platzt zwischen grid elementen ein. Kein platzt an jedem ende.
+			   space-evenly                             Fügt gleichmäßigen platzt zwischen grid elementen ein und das an beiden enden.
+
+align-items:                                    Align-items positioniert items vertical an also an der säule (column aka block) an.
+               start                                    Richtet das grid item nach oben an.
+			   end                                      Richtet das grid item unten an.
+			   center                                   Richtet das grid item centriert an und füllt die maximale größe des textes aus.
+			   stretch                                  Stretcht alle items um das grid zu füllen.
+
+align-content:                                  Align-content positioniert das GANZE grid in der column axe entlang (Box aka top to bottom).
+               start                                    Richtet das grid nach oben an.
+			   end                                      Richtet das grid nach unten an.
+			   center                                   Centriert das grid vertical.
+			   stretch                                  Strecht die items im container vertical um die größe des grids zu erweitern
+			   space-around                             Fügt platz ums grid element rum. Was was in doppelt so viel freiraum resultiert.
+			   space-between                            Fügt gleichmäßigen platzt zwischen grid elementen ein. Kein platzt an jedem ende.
+			   space-evenly                             Fügt gleichmäßigen platzt zwischen grid elementen ein und das an beiden enden.
+
+justify-self:                                   Kann individuele elemente von justify-items überschreiben und individuel bewegen.
+align-self:                                     Kann individuele elemente von align-items überschreiben und individuel bewegen.
+               start                                    Richtet das item nach links/oben vom grid aus.
+               end                                      Richtet das item nach rechts/unten vom grid aus.
+               center                                   Richtet das item nach Center vom grid aus.
+               stretch                                  Strecht das item zum grid an.
+
+grid-auto-rows:                                 Diese declaration erstellt automatisch row elemente wenn diese gebraucht werden wie zb bei ebay wenn neue sachen permanent dazukommen.
+grif-auto-columns:                              Diese declaration erstellt automatisch column elemente wenn diese gebracuht werden.
+Einheiten:                                              px,%,fr,repeat()
+
+grid-auto-flow:                                 Hiermit können wir die reihenfolge der hinzugefügten elemente spezifizieren. Und entscheidet wann neue elemente hinzugefügt werden sollen. Diese property ist für die grid container zuständig.
+               row                                      Spezifieziert ob die elemente eine neue reihne von links nach rechts kreieren sollen wenn zu viele exestieren.
+			   column                                   Spezifieziert ob die elemente eine neue säule von oben nach unten kreieren sollen wenn zu viele exestieren.
+			   dense                                    Aktieviert ein algorithmus der versucht kleine elemente zwischen dem erstellten grid zu positzionieren.
+               row dense                                Es können diese values kombieniert werden.
+			   column dense
+		
+
+
+
+
+
+English summary:		
+
+grid-template-areas specifies grid named grid areas
+
+grid layouts are two-dimensional: they have a row, or inline, axis and a column, or block, axis.
+
+justify-items specifies how individual elements should spread across the row axis
+
+justify-content specifies how groups of elements should spread across the row axis
+
+justify-self specifies how a single element should position itself with respect to the row axis
+
+align-items specifies how individual elements should spread across the column axis
+
+align-content specifies how groups of elements should spread across the column axis
+
+align-self specifies how a single element should position itself with respect to the column axis
+
+grid-auto-rows specifies the height of rows added implicitly to the grid
+
+grid-auto-columns specifies the width of columns added implicitly to the grid
+
+grid-auto-flow specifies in which direction implicit elements should be created
+
+
+
+
+
+
+
+
+
+Extra:
+
+
+Width and height —   specifies the width and height of the content area.
+Padding —            specifies the amount of space between the content area and the border.
+Border —             specifies the thickness and style of the border surrounding the content area and padding.
+Margin —             specifies the amount of space between the border and the outside edge of the element.
+
+
+Abkürzung	                                           Absolut
+                                                       Relativ
+                                                 Typische Anwendung
+px
+Pixel	                                         Absolut / Relativ
+                                                 Ein Pixel beschreibt die kleinste Ausgabeeinheit eines Monitors und ist relativ von Ausgabegerät zu Ausgabegerät. Auf den einzelnen Monitor bezogen ist die Angabe von Pixeln ein absolutes Maß. Pixel sind ein geeignetes Maß, um Schriftgrößen und die Abmessungen von Elementen für den Monitor festzulegen.
+                                                 pixel sind unabhängig von der CSS-Kaskade. 
+em
+EMS	                                             Relativ
+                                                 bezieht sich auf die Schriftgröße eines Elements. Für ein flexibles Layout, dass sich anpasst, wenn der Benutzer die Schriftgröße im Browserfenster ändert, ist em als Maßeinheit für Schriften und Layout-Boxen besser geeignet als Pixel.
+                                                 em reagiert auf die CSS-Kaskade.
+ex
+EX	                                             Relativ
+                                                 wie EMS, aber ex steht für die Größe des Kleinbuchstabens in einem Element – i.d.R. also etwa die Hälfte von em.
+%
+Prozent	                                         Relativ
+                                                 Prozentangaben eignen sich besonders gut für die Ausgabe auf dem Monitor, wenn Layoutelemente an verschiedene Monitorgrößen angepaßt werden sollen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+freecodecamp.org (Sachen die ich besser verstanden habe aka will)
+
+
+Web-Dev:
+
+
+
+
+
+Basic Css:
+[type='checkbox']  {}                                                            Makiert in css den type von einer form also checkbox und darauf kann css angewendet werden.      
+
+--penguin-skin: gray;                                                            Erstellt ein var aka variable um sie an andere elemente anzusammes
+.right-hand { background: var(--penguin-skin);}                                  Hier wird das var mit dem background verbunden.
+.right-hand { background: var(--penguin-skin, black);}                           Fallback farbe wird hier angegeben also black.
+
+.right-hand { background-color: red;  background: var(--penguin-skin, black);}   Falls browser wie IE keine var unterstützen dann immer eine fallback color setzen.
+
+:root {--penguin-belly: pink;}                                                   Es ist eine gute idee variablen im root zu difinieren um überall darauf zugriff zu haben.
+.penguin {--penguin-belly: white;}                                               Variablen können überschreiben werden wenn sie außerhalb vom root erneut difiniert werden.
+
+@media (max-width: 350px) {:root {--penguin-skin:black;}}                        Media querries sind zuständig um sachen jenachdem wie die verhältnisse sind wie hier max width 350px ihre css values zu überschreiben wie penguin belly der jetzt schwarz ist wenn das fenster 350px groß ist;
+
+
+
+
+Applied Visual Design:
+text-align: justify;                Sorgt dafür das der text bis ganz rechts geht außer die letzte linie.
+
+<hr>                                Self closing tag um eine linie der breite nach in html zu erstellen.
+
+box-shadow:
+          offset-x                  Wie weit man den schatten horizontal weg verschiebt.
+		  offset-y                  Wie weit man den schatten vertikal weg verschiebt.
+		  blur-radius(optional)     Selbsterklärend.
+		  spread-radius(optional)   Selbsterklärend.
+		  color                     Farbe einstellen.
+Extra-Tipp:                         Commas können benutzt werden um den schatten jenachdem welche seite man stlen will zu stylen.
+
+a:hover                             Wenn die maus über einem element ist ändert diese dann die declaration.
+
+position: absolute;                 Muss als eltern element eine position relative haben um sich daran anzupassen.
+
+float:right;                        Hier können elemente nach rechts oder links verschoben werden und sollte die width gegeben werden um auszusagen wie viel platzt das element z.b rechts bracht. Wenn zb float links 50% einnehment tut dann sollte position right max auch 50% einnehmen.
+
+linear-gradient(45deg, pink, blue)  Farbverlauf von 45 grad vob pink nach blau wird erstellt.
+repeating-linear-gradient(          Erstellt ein farbverlauf der verschiedene farben benutzen kann.
+					yellow 0px,		Hier startet der verlauf von 0 px
+					yellow 40px,	Dieser geht dann bis 40px
+					black 40px,		Danach beginnt schwarz sofort also fängt an bei 40px
+					black 40px,		und geht 40px weit
+						 )
+
+background: url();                  Hiermit kann man bilder zu hintergründen machen.
+ 
+transform: 
+			scale(2)                Verdoppelt die element größe. Mann könnte auch :hover abgeben damit das element doppelt so groß wird wenn man drüber hovert.
+			skewX/Y(30deg)			Vertzerrt das element schief um 30 grad an der X axe oder Y axe.
+
+.heart:before/after {content: ""}   Dieses pseudo element ist zuständing sachen vorher oder nacher zuzufügen. Es MUSS ein content angegeben werden. Wenn ein objekt erstellt werden soll lässt man dies frei.
+
+ANIMATION:
+#ani {
+animation-name: rainbow;            Hier wird der name der animation angegeben um an keyframes zu verbinden. 
+animation-duration: 1s;             Länge der Animation.
+}
+
+@keyframes rainbow {                Hier wird ein keyframe mit dem namen verbunden.
+0% {                                Gibt den anfang der Animation an.
+background-color: blue;
+}
+100% {                              Gibt das ende der animation an.
+background-color: red; {            Hiermit ensteht eine animation die mit blau beginnt und ins rote geht 1s lang.
+}
+
+Für das element:
+:hover                              Kann benutzt werden um animation zu starten wenn man mit der maus drüber hovert.
+animation-fill-mode: forwards;      Stellt ein was passieren soll nach der animation. Hier bleibt das element im endstadium.
+animation-iteration-count: 3;       Sagt aus wie oft die animation geloopt werden soll. Es kann auch infinite gesetzt werden.
+
+Für die keyframes:
+top,left,right,bottom               Wenn die position relativ absolute etc ist kann dies benutzt werden um bewegung zu animieren.
+opacity                             Um das objekt transparent zu animieren
+animation-timing-function: linear;  Hiermit wird bestimmt wie die animation sich verhalten soll zb ease starten langsam wird in der mitte schneller und dann wieder am ende langsamer. Dazu gibt es noch ease-in, ease-out, linear
+animation-timing-function:
+cubic-bezir(0.25, 0.25, 0.75, 0.75);Hier wird das animationsverhalten feiner definiert. die reihenfolge ist x1 y1 x2 y2. Auf einem diagram würde man sehen wie die kurve als erstes durch x1 und x2 geht dann durch y1 y2. Diese declaration wird benutzt um mehr controlle über die animationne zu bekommen wie zb jonglieren zu simulieren (Mehr informieren aka halb lost)
+
+
+
+Applied Accessibility:
+<div>                                         Gruppiert inhalt
+<section>                                     Gruppiert verwandte inhalte
+<article>                                     Gruppiert selbstständige inhalte.
+<nav>                                         Sollte nur 1 mal benutzt werden. Wenn dann eher wieder im footer.
+<audio>                                       Um für screen reader audio dateien anzubieten.
+<source src="./audio.mp3" type="audio/mpeg">  
+</audio>
+<lable for="email">                           Gibt dem screenreader die verbindung zum input.
+<fieldset>                                    Ist zuständing dem screenreader zu zeigen das dies ein eigenes eigabefeld ist.
+<legend>                                      Um das eingabefeld zu bennenen.
+</legend>
+</fieldset>
+
+<lable>Setzte ein datum:</lable>              Sollte bennant werden falls type date nicht funktioniert.
+<input type=""date>                           Zuständig um ein Feld zu rendern um ein datum zu wählen.
+
+<time datetime="03-03-2020">                  Dieses element ist zuständing genauer das datum zu difienieren für programme für menschen mit behinderung.
+<p> Lorem ipsum </p> </time>
+
+.sr-only {                                    So wird css benutzt um inhalte nur für den screenreader anzuferitgen damit es nicht viduell sichbar ist.
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+Web Content Accessibility Guidelines (WCAG) Sagt aus das farben eines textes ein bestimmten contrast haben sollten um für eine bessere erfahrung für jeden dabieten zu können.
+Contrasst ratio: 21:1                       Schwartz auf weißem hintergrund.
+hsl(120, 25%, 55%);                         Lightness value kann verändert werden um den Kontrasst zu verbessern. Es gibt online mehrere seiten um einem dabei zu helfen richtige farben zu wählen damit Farbenbilnde alles gut lesen können.
+
+Click here for 
+<a href="">information about batteries</a>  Es wäre unnötig den link um das click here zu machen da ein screen reader sowas dann vorlesen würde und die beeinträchtigte Person dann keine ahnung hätte was mann damit anfangen kann.
+</p>
+
+accesskey="g"                               Wenn man dies zb einem button geben würde dann könnte man für User die nur eine Tastatur benutzen ein shortcut machen und diese könnten dann mit alt + den key da hin springen und focusieren.
+
+tabindex="0"                                Aktiviert das wenn man über die seite Tabt das dieses element dann gefocust wird um deutlicher zu machen das dies wichtig ist. Es kann jetzt :focus in css benutzt werden um am element zu arbeiten.
+         "1"                                Wenn man den tabindex auf eins oder höher stellt wird das jetzt priorität haben über dem default tabindex welches sich auf denn html source code bezieht.
+         "2"                                Tabindex 1 wird als erstes getabbt dann tabindex 2 usw.
+
+
+
+
+
+Responsive Web Design:
+Tip:										
+Retina										Um sicherzustellen das Bilder auf einem Retina Display aka Hoch aufslösenden displays gut assieht sollte die width und height in css immer halbiert werden.
+
+Viewpoint Units:							Diese einheit ist dafür da typographie auf verscheidenen geräten gelich anzuzeigen und ist relativ zur dispay width und height.
+12vw										Dies wäre jetzt 12% der viewpoints breite.	
+13vh										Dies würde 13% der viewpoints höhe sein.
+14vmin										Würde die kleinere größe von der breite oder höhe nehmen. Zb wenn die breite kleiner ist dann ist dies 14% vom viewpoint.
+15vmax										Würde die größere größe von der breite oder höhe nehmen. Zb wenn die höhe größer ist dann ist dies 15% vom viewpoint.
+
+
+
+Responsive deisgn extra:
+
+em											Em ist gleich der größe vom font. Standart ist 16 px aber wenn man von zb footer die font size zu 18px ändert und von footer .beispiel die em zu 2em dann ist jetzt der text 2 * 18 also 36.
+
+min-width: 300px;							Gibt an wie breit aka klein zb der text werden kann wenn man das fenster verkleinert.
+min-height: 100px;
+
+max-width: 600px;							Gibt an wie breit aka groß zb der text werden kann wenn man das fenster vergrößert.
+max-height: 100px;
+
+.image-container img {						So wird ein img normalerweise responsive gemacht.
+  max-width: 100%;							
+  height: auto;
+  display: block;
+}
+
+body {										So werden backgrounds eingestellt.
+  background-image: url('#');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+English summery:
+
+Content on a website can be sized relative to other elements on the page using relative measurements.
+
+The unit of em sizes font relative to the font size of a parent element.
+
+The unit of rem sizes font relative to the font size of a root element. That root element is the <html> element.
+
+Percentages are commonly used to size box-model features, like the width, height, padding, or margin of an element.
+
+When percentages are used to size width and height, child elements will be sized relative to the dimensions of their parent (remember that parent dimensions must first be set).
+
+Percentages can be used to set padding and margin. Horizontal and vertical padding and margin are set relative to the width of a parent element.
+
+The minimum and maximum width of elements can be set using min-width and max-width.
+
+The minimum and maximum height of elements can be set using min-height and max-height.
+
+When the height of an image or video is set, then its width can be set to auto so that the media scales proportionally. Reversing these two properties and values will also achieve the same result.
+
+A background image of an HTML element will scale proportionally when its background-size property is set to cover.
+
+Relative units of measurement are a first step towards incorporating responsive design in a website. When combined with more advanced responsive techniques, you can create a seamless user experience regardless of a device’s screen size.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Css Flexbox:
+Display: Flex:							    Sellt den container in ein flex container um.
+
+Für den Flex-Container:
+flex-direction:								Ermöglicht es die positionierung von jedem child element zu rows oder columns.
+				row							Positioniert die children der row axe entlang.
+				column						Positioniert die children der column axe entlang.
+				row-reverse					Tauscht die child elements der row axe um.
+				column-reverse;				Tauscht die child elements der column axe um. 
+
+justify-content:							Positioniert die elemente im container HORIZONTAL.
+				flex-start					Positioniert die elemente an den anfang.
+				flex-end					Positionier die elemente ans ende.
+				space-between				Lässt nur platz zwischen den containern und schieb diese an den rand.
+				space-around				Lässt platz zwischen den cointainer ist aber nicht an den rand gebunden.
+				space-evenly;				Lässt überall gleichen platz ums element herum.
+
+align-items:			     				Positioniert die elemente im container VERTICAL.
+				flex-start					Positioniert die elemente an den anfang.
+				flex-end					Positionier die elemente ans ende.
+				center						Positioniert die items in den center.
+				stretch						Stretch die items um in den flex container zu passen.
+				baseline					Positionier die items so and das die genau über der mitte sitzen wie text auf einem strich.
+
+flex-wrap:									Ermöglicht mehrere felx items in mehrere reihen oder säulen zu trennen.
+				nowrap						Default und wrapt keine Items.
+				wrap						Wrapt itemns von links nach rechts wenn sie in einer reihe sind oder von oben nach unten für säulen.
+				wrap-reverse;				Wrapt items rückwerts also von rechts nach link für reihen oder unten nach oben für columns.
+
+Für Flex-items:
+flex-shrink:								Ermöglicht flex items zu schrumpfen wenn der container zu klein ist oder kleiner wird. Items schrumpfen wenn die container breite kleiner ist als alle breiten zusammen der items im container.
+			0-10;							Die value wird in zahlen angeben. Zb box 1 hat die value 1 und box 2 die value 2 dann wird box2 2mal mehr geschrumpft.
+flex-grow:									Ermöglicht flex items sich zu vergößern wenn der cointainer vergrößert wird.
+			0-10;							Die value wird in zahlen angeben. Zb box 1 hat die value 1 und box 2 die value 2 dann wird box2 2mal größer.
+flex-basis:									Setzt den standart wert bevor css änderungen an flex-shirnk oder grow macht.
+			10em;							Hier können alle einhaiten verwendet werden wie px etx.
+flex: 		2 2 150px;						Dies fässt alles drüber zusammen die reihenfolge ist: grow,shrink,basis.
+						
+order:										Order kann benutzt werden um die reihenfolge von felx items zu ändern. Normalerweise wird dies der reihenfolge von html source zugeordnet werden aber hiermit kann man es ändern.
+			-2/2							Hier werden zahlen für values benutzt und die reihenfolge ist wie 1,2,3 aber untersützt auch minus also -1,1,2,3,4 etc.
+
+align-self:									Hiermit können items individuell positioniert werden da sachen wie float oder clear bei flex items nicht funktionieren.
+				flex-start					Positioniert die elemente an den anfang.
+				flex-end					Positionier die elemente ans ende.
+				center						Positioniert die items in den center.
+				stretch						Stretch die items um in den flex container zu passen.
+				baseline					Positionier die items so and das die genau über der mitte sitzen wie text auf einem strich.
+
+
+
+Css grid extra:
+grid-template-columns: 
+repeat(auto-fill, minmax(60px, 1fr));		Füllt immer mehr säulen von 60px wenn benötigt.
+repeat(auto-fit, minmax(60px, 1fr));		Ist wie auto-fill nur stretch die items in die größe des containers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

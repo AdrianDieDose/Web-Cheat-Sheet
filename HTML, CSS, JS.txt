@@ -1,0 +1,887 @@
+The Script Element:
+
+<script> </script>									Hiermit wird im html code die tür für java script gemacht damit dieser funktionieren kann.
+
+<script src="./script.js"></script>					Mit src wird der path zum script gegeben.
+
+How are scripts loaded:								In HTML werden elemente der reihe nach vom parser geladen und erst wenn zb ein script zu ende geladen hat wird die nächste zeile geladen. Dies ist wichtig um zu verstehen wie die einzelnen sahcen erecheinen um die user experience zu bessern.
+
+defer												Defer ist eine attribute die dafür sorgt das wenn html über ein script element stößt das dieser heladen wird aber erst ausgeführ wenn die ganze hml seite geladen hat. Dies ist praktisch wenn man interactionen mit dem DOM im js code hat und deswegen der ganze html code erst ausgeführt werden muss.
+<script src="./test.js" defer></script>				So wird er benutzt		
+
+async												Async sorgt dafür das wenn html auf die js datei stößt das diese im hintergrund geladen wird und beliebing dann ausgeführt wird während html weiter geladen wird. Dies ist besonder praktisch da dies die ladezeit von der website verbessert.
+<script src="./test.js async"></script>				Hier wird async benutzt.
+
+
+
+
+
+
+
+English summery: 
+
+HTML creates the skeleton of a webpage, but JavaScript introduces interactivity
+
+The <script> element has an opening and closing tag. You can embed JavaScript code inbetween the opening and closing <script> tags.
+
+You link to external JavaScript files with the src attribute in the opening <script> tag.
+
+By default, scripts are loaded and executed as soon as the HTML parser encounters them in the HTML file, the HTML parser waits to load the entire script before from proceeding to parse the rest of the page elements.
+
+The defer attribute ensures that the entire HTML file has been parsed before the script is executed.
+
+The async attribute will allow the HTML parser to continue parsing as the script is being downloaded, but will execute immediately after it has been downloaded.
+
+The old convention was to put scripts right before the </body> tag to prevent the script from blocking the rest of the HTML content. Now, the convention is to put the script tag in the <head> element and to use the defer and async attributes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The document object model:
+
+What is the DOM ?									Der DOM ist ein Model wie eines Stamm-baumes welches ermöglicht programmiereren konzepte in hirarchie zu führen und zugang zu elementen zu schaffen. Es gibt auch andere arten von dokumenten wie xml oder svg wleche die DOM struktur besitzen.
+													Ganz simpel gesagt ist der DOM die verbindung von einer HTML seite und deren scripting sprache.
+
+
+The DOM as a Tree Structure:						Der DOM ähnelt einem Stamm-Baumes in vielen aspekten. Dieser besteht zb aus familien angehörigen welche miteinander verwand sind usw.
+													In computer science nennt man jeden famillien angehörigen eine NODE! Eine node ist sich ein überschneidender punkt welche daten enthalten.
+
+Parent Child Relationships in the DOM:				
+Parent Node:										Ein eltern node ist der am nächsten angeschlossende node zu einem anderen node in der richtung zum root.		
+Child node:											Ein kinder node ist der am nächsten angeschlossende node zu einem anderen node in der richtung weg vom root.
+
+
+Nodes and Elements in the DOM:						Es können neuen verschiedene typen von node objekten in einem DOM baum exestieren. Zb standartmäsig sind Element und Text types im DOM enthalten und in der regel wird das script nur mit diesen Elementen interagieren.
+
+
+Attributes of Element Node:							Das DOM ermöglicht es uns auf node attribute zuzugreifen und zu modifizieren wie classen ids und inline styles.	
+
+
+
+
+
+
+
+
+English summery:
+
+Let’s review what you’ve learned so far:
+
+The DOM is a structural model of a web page that allows for scripting languages to access that page.
+
+The system of organization in the DOM mimics the nesting structure of an HTML document.
+
+Elements nested within another are referred to as the children of that element. The element they are nested within is called the parent element of those elements.
+
+The DOM also allows access to the regular attributes of an HTML element such as its style, id, etc.
+
+With this understanding, you can begin to leverage the power of scripting languages to create, update, and maintain webpages!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Javacript and the DOM:
+
+
+The document keyword:								Wenn man auf elemente des DOMs zugreifen will wird erst der root angesprochen indem man document als keyword nutzt.
+
+document.body										Hiermit wird der body des DOMs angesprochen.
+
+
+
+
+Twaek an element:
+
+document.body.innerHTML = 'Ich esse dich'			Mit dem .innerHTML ist es möglich auf den inhalt des gegebenen HTML DOMs path text oder attribute zu ändern. Hier wird dann 'Ich esse dich' im body eingefügt.
+document.body.innerHTML = '<h1>Ich esse dich</h1>'	Es ist auch möglich validen html code einzufügen.
+
+
+
+
+
+
+
+Select and Modify Elements:
+
+document.querySelector('p')							Die .querySelector() funktion kann auf spezifische elemente des DOMs selectieren und geben das erste element dessen zurück. Dieser kann auch klassen . oder id # selectieren. Dazu ist zu beachten das wenn zb ein p angegeben wird das das erste element im DOM gewählt wird was p ist.
+document.getElementById('pic1')						Mit dieser funktion werden id direct drauf zugerifen.
+
+
+
+
+
+
+Style an element:
+
+document.querySelector('body')						
+.style.backgroundColor = 'blue';					Mit der .style property ist es möglich auf css des gewählten selectors zuzugreifen und dieses zu ändern. Hierbei ist zu beachten das dies nicht wie in css mit einem hyphen geschiet sonder auch in camelCase getan werden muss.
+
+
+
+
+
+
+
+
+Create and Insert Elements:
+
+
+let paragraph = document.createElement('p');		Hier wird ein neues element erstellt um dies gleich dem DOM hinzuzufügen.
+
+paragraph.id = 'info'; 								Diesem element wird erst eine id zugeteilt.
+
+paragraph.innerHTML = 
+'The text inside the paragraph';					Danach das innere des Ps gegeben.
+
+document.body.appendChild(paragraph);				Und zu letzt im DOM body parent als child hinzugefügt.
+
+
+
+
+
+
+
+
+
+
+
+Remove an Element:
+
+
+
+let removeThis = 
+document.querySelector('#oaxaca');					Hier wird eine variable erstellt die eine id selected.
+
+document.getElementById('more-destinations')		Dann kann diese mit .removeChild(was entfernt werden soll) im element dessen id more-destinations ist entfernt.
+.removeChild(removeThis);
+
+
+document.getElementById('sign').hidden = true;		Hiermit kann ein DOM element unsichtbar gemacht werden und wird dadurch erstmal nicht geladen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interactivity with onclick:
+
+
+
+
+
+let element = document.querySelector("button");
+
+function turnButtonRed (){
+  element.style.backgroundColor = 'red';
+  element.style.color = 'white';
+  element.innerHTML = 'Gay';
+}
+
+element.onclick = turnButtonRed;					Hier wird eine funktion ausgeführt wenn der event listener aktiviert wird. In diesem falle ein click.
+
+
+
+
+
+
+
+
+
+
+
+
+Traversing the DOM:									Jedes DOM element node hat eine .children property. Diese listen geben dann die kinder oder eltern wieder und null wen diese elemente leer sind.
+
+
+.firstChild											Diese property gibt zugriff auf das erste kind element.
+
+.parentNode											Und diese property gibt zugriff auf das eltern element welches darauf verwendet wurde.
+
+
+
+
+
+
+
+
+English summery:
+
+Let’s review what we learned:
+
+The document keyword grants access to the root of the DOM in JavaScript
+
+The DOM Interface allows you to select a specific element with CSS selectors by using the .querySelector() method
+
+You can also access an element directly by its ID with .getElementById()
+
+The .innerHTML and .style properties allow you to modify an element by changing its contents or style respectively
+
+You can create, append, and remove elements by using the .createElement(),.appendChild() and .removeChild() methods respectively
+
+The .onclick property can add interactivity to a DOM element based on a click event
+
+
+
+
+
+
+
+
+
+
+
+
+
+DOM EVENTS WITH JAVASCRIPT
+
+What is an Event?																	Events sind user interaktionen und browser manipulationen die man programmieren kann um funktionalitäten zu triggern.
+
+
+
+
+
+
+
+
+
+
+"Firing" Events:																	Event handler warten auf ein specifisches event und führen dann eine funktion aus. Dies sind event handler funktionen.
+
+
+
+
+
+
+
+
+
+
+
+Event Handle Registration:
+
+
+let eventTarget = document.getElementById('targetElement');
+
+eventTarget.onclick = function() {													Hier wird eine event handler funktion kreiert. Diese wird zusammengabaut aus dem element welches wir ansprechen wollen dann einer handler property, hier der prefix on und der event typ click welches aktiviert wird wenn der user die maus dauf dem dom element drückt und wieder loslässt. Und zu guter letzt wird die event handler funktion geschrieben welche den code ausführ wenn das event passiert ist.
+  // this block of code will run
+}
+
+
+
+
+
+
+
+
+
+
+Adding Event Handlers:
+
+
+let eventHandlerFunction = function() {
+  // this block of code will run
+}
+
+eventTarget.onclick = eventHandlerFunction;											Es ist best practice bennante event handler functionen statt anonyme zu erstellen.
+
+
+
+
+
+let textChange = () => {
+view.innerHTML = 'Hello, World!';
+};
+
+let textReturn = () => {															Ein event handler!
+  view.innerHTML = 'View';
+};
+
+view.addEventListener('click', textChange);											Hier wird eine .addEventListener methode benutzt welche ein ziel vorm . braucht, und das event und die funktion im parameter nimmt. Diese methode ist sehr praktisch um mehrere event handlers mit einem event zu registrieren ohne die event handlers zu ändern.
+close.addEventListener('click', textReturn);										Wenn close geclickt wird dann führe textReturn aus.!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+Removing Event Handlers:
+
+
+view.removeEventListener('click', textChange);										Bei .removeEventListener wird aufgehört nach dem event zu hören. Es ist wichtig zu merken das diese methode im prinzip genau das gleiche in dem parameter drinnen haben muss wie das event was listent.
+
+
+lock.addEventListener('click', function() {											Hier wird gehört ob das lock angeglickt wird und wenn dies der fall ist hört es auf die tür auf und zu machen zu können.
+  door.removeEventListener('click', openDoor)
+});
+
+
+
+
+
+
+
+
+
+Event Object Properties:															Diese properties können auf events benutzt werden um unterschiedliche sachen herauszufinden oder zu modifizieren.
+
+
+
+.target																				Um das element zuzugreifen welches das event getriggert hat.
+.type																				Um auf denm namen des events zuzugreifen.
+.timeStamp																			Um die millisecunden zu bekommen seitdem das document geladen hat und das event getriggert ist.
+
+
+
+
+Beispiel:
+
+let social = document.getElementById('social-media');
+let share = document.getElementById('share-button');
+let text = document.getElementById('text');
+
+// Write your code below
+let sharePhoto = function(event) {													Die funktion bekommnt ein paramenter.
+  event.target.style.display = 'none';												Hier wird der target der auslöser events ausgewählt.
+  text.innerHTML = event.timeStamp + 'ms';											Und hier die vergangene zeit seitdem die seite geladen hat und das event ausgelöst wurde.
+}
+
+share.addEventListener('click', sharePhoto);
+
+
+
+
+
+
+
+
+
+
+
+
+Event Types:																		Es gibt viele arten von event typen wie zb click...
+
+
+https://developer.mozilla.org/en-US/docs/Web/Events#Mouse_Events					Hier kann man diese anschauen.
+
+
+
+
+
+
+
+Keyboard Events:																	Key events haben eine property .key welche den key der vom user gedrückt wurde speichert.
+
+
+
+
+
+
+
+
+
+
+
+
+
+English summery:
+
+
+JavaScript engines register events as objects with properties and methods associated with them.
+
+Event handlers are registered as properties of their event object.
+
+Event object properties like .target, .type, and .timeStamp are used to provide information about the event.
+
+The .addEventListener() method can be used to add multiple event handler functions to a single event.
+
+The .removeEventListener() method stops specific event handlers from “listening” for specific events firing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Templating With Handlebars:														Handlebars ist eine js libary die wiederverwendbaren html code mit javascript darstellt.
+
+
+
+
+
+
+
+Using Handlebars expressions:
+
+
+
+<script id="greet" type="text/x-handlebars-template">								So wird ein template im html für handle bars erstellt.
+  <p>{{greet}}</p>																In diesem template werden so füller wörter erstellt welche js dann mit den gewünschten sachen füllt.
+</script>
+
+
+
+
+const source = document.getElementById('greet').innerHTML;						Hier wird der content vom oberen template ausgewählt und in einer var gespecihert.
+
+const template = Handlebars.compile(source);									Hier wird das html vom source in die handlebar function geschickt welche dann die gewünschten sachen ins template einfügt.
+
+const context = {																Um etwas ins template zu schicken muss ein in einem objekt gespeichert werden.
+  greeting: 'Hello World!',														Dies ist was ins template eingesetzt werden soll.
+}
+
+const compiledHtml = template(context);											Um das template zu füllen wird hier das objekt ins template geschickt und dieses wird compiled.
+
+const fill = document.getElementById('hello');									Hier wird ein div ausgewählt um dies mit dem template zu ersetzten.
+
+fill.innerHTML = compiledHtml;													Hier wird es mit dem compilten handlebars html ersetzt.
+
+
+
+
+
+
+
+
+Handlebars "If" block helper:
+
+<script id="ifHelper" type="text/x-handlebars-template">
+
+{{#if opinion}}																	Mit handlebars kann man auch if statements hinzufügen die dann compiled werden wenn diese truthy ist.
+ <p>"The correct way to say 'GIF' is GIF!"</p>
+{{/if}}																			Diese if statements haben opening #if und closing /if tags!
+
+</script>   
+
+
+
+
+
+const context = {																Die if statements werden ganz normal in objecten gespeichert.
+  opinion: true																	Da dies true ist wird jetzt der obere html benutzt.
+}
+
+
+
+
+
+Handlebars "Else" section:
+
+
+
+{{#if argument}}
+  // Code to include if the provided argument is truthy 
+{{else}}																		Es ist auch möglich else statements in template einzufügen wenn if false ist.
+  // Code to include if the provided argument is falsy 
+{{/if}}
+
+
+
+
+
+
+
+Handlebars "Each" and "This":
+
+
+{{#each someArray}}																Mit each ist es möglich durch ein array zu gehen.
+  <p>{{this}} is the current element!</p>										Und mit this wird jedes element vom array eingefügt und ausgegeben.
+{{/each}}
+
+
+
+const context = {
+  someArray: ['First', 'Second', 'Third'] 										Dieses array wird dann durchgegangen.
+}
+
+
+Output:
+<p>First is the current element!</p>
+<p>Second is the current element!</p>
+<p>Third is the current element!</p>
+
+
+
+
+
+
+
+
+{{#each someArray}}
+  <p>The current shape is: {{this.shape}}!</p>									Es ist auch möglich bei this durch objekte im array zu gehen. Hier this.shape
+{{/each}}
+
+
+const context = {
+  someArray: [
+    {shape: 'Triangle'},														Welche dann diese objekt values nimmt und einsetzt.
+    {shape: 'Circle'},
+    {shape: 'Square'}
+  ] 
+}
+
+
+
+
+
+
+
+Beispiel :
+
+
+    <script id="languagesTemp" type="text/x-handlebars-template">				
+			{{#each languages}}													Hier wird handlebars benutzt um durch ein array zu gehen.
+      	<div class="card">
+          {{#if this.modern}}													Wenn .this (languages) modern true ist dann wird:
+        	<p>I should learn {{this.name}}.</p>								Dies gezeigt!
+          {{else}}																Sonst
+          <p>When I have time, I'll learn {{this.name}}.</p>					Wird dies gezeigt.
+          {{/if}}
+        </div>
+      {{/each}}
+    </script>
+
+
+
+
+
+const source = document.getElementById('languagesTemp').innerHTML;
+const template = Handlebars.compile(source);
+
+const context = {																Hier ist das array was oben für each benutzt wird.
+  languages: [
+    {
+      name: 'HTML',
+      modern: true																Das ist die condition die es true oder false macht.
+    },
+    {
+      name:'CSS',
+      modern: true
+    }, 
+    {
+      name: 'JavaScript',
+      modern: true
+    },
+    {
+      name: 'COBOL',
+      modern: false																Da dies false ist wird else ausgeführt oben.
+    }
+  ]
+};
+
+const compiledHtml = template(context);
+
+const displayGoals = document.getElementById('goals');
+displayGoals.innerHTML = compiledHtml;
+
+
+
+
+
+
+
+
+
+
+
+English summery:
+
+
+Handlebars is an external library used to create templates which are a mix of HTML, text, and expressions.
+
+Handlebars uses expressions which are wrapped inside double braces like: {{someVariable}}
+
+A script tag with a type of "text/x-handlebars-template" is used to deliver a template to the browser.
+
+Handlebar.compile() returns a templating function from a template script intended for Handlebars.
+
+A template created from .compile() will take an object as an argument and use it as context to generate a string containing HTML.
+
+Handlebars has built in block helpers which can be included in a Handlebars script.
+
+Block helpers have a starting expression and an ending expression. The starting expression will have a # appears before a keyword. The ending expression will have the same keyword but with a / character to denote the end.
+
+The {{if}} will conditionally render a block of code.
+
+An {{else}} expression can be inserted into an if helper block and used as part of the conditional statement.
+
+{{each}} is another built-in helper expression which accepts an an array to iterate through.
+
+In the block helper functions, the {{this}} expression gives context and serves as a placeholder for the current value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

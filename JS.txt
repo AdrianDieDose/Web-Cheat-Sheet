@@ -1,0 +1,3807 @@
+https://www.codecademy.com/learn/paths/web-development/tracks/getting-started-with-javascript/modules/learn-javascript-introduction/cheatsheet
+Intro to JavaScript:
+
+console					Dies ist ein stichwort welches auf objekte collectionen von daten und actionen sich bezieht.
+console.log(20);		Diese aktion aka methode von der console ist .log welche zur console druckt aka logt.
+
+// 						Somit kann ein kommentar auf eine linie gemacht werden.
+/* */					Wie in css kann dies mehrere lines auf einmal blockieren.
+
+
+
+
+
+
+DATA TYPES:
+
+Number:	(123.321);		Alle nummern auch decimal-zahlen. Ohne gänsefüße eingehüllt werden.
+
+String: ('123 abc!');	Alle buchstaben auf der tastatur, leerzeichen, numbern, symbole die mit gäsnefüßen eigehüllt sind.
+
+Boolean:				Dieser Datentyp hat nur zwei mögliche werte: true oder false / Ya oder nein / An oder aus. Ohne gänsefüße.
+
+Null:					Dieser datentyp sagt aus das der wert fehlt und dies wird mit null gezeichent. Ohne gänsefüße.
+
+Undefinded:				Ist wie null nur wird anders benutzt. Ohne gänsefüße.
+
+Symbol:					Neu zu js. Einzigartige indentifizierer. Jetzt nicht so wichtig.
+
+Object: 				Kollektion verwandter daten.
+
+
+
+
+
+
+
+
+Arithmetic Operators	Jede der rechen namen heißen Operators. Diese können für zahlen oder Strings benutzt werden.
+
++						Plus
+
+-						Minus
+
+*						Mal
+
+/						Geteilt
+
+%						"Noch übrig" Dieser operator auch modulo gennant und nimmt die rechte zahlt und teilt die linke so oft glatt bis der rest übrig bleibt. 11 % 3 macht 2 weil die drei drei mal in die 11 passt und der rest ist 2.
+
+
+
+
+
+
+
+
+
+String Concatenation							bezeichnet wenn man mit operators strings zusammenführt.
+
+console.log('was' + ' ' + 'geht');				Es müssen leerzeichen extra geseztz werden da es genau geschnitten wird. Hier würde jetzt : "was geht" rauskommen
+
+Propeties										Jedesmal wenn wir ein neuses stück daten in Js einführen speichert das der browser als instance des daten types.
+
+console.log('Hello'.length);					Jeder string instance hat die eigenschaft LENGTH und speicher die länge der buchstaben in diesem string. Diese können bagefangen werden mit der periode und dem eigenschaft namen.
+
+.												Der punkt ist ein weiterer operator und wird dot operator genannt.
+
+
+
+
+
+
+Methods											Methoden sind actionen die wird ausführen können. Js gibt einiege string methoden. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+'example'.methodName();							Diese methoden werden mit einem . und () aufgerufen
+
+console.log('Codecademy'.toUpperCase() );		Mit dieser methode werden alle buchstaben in druckbuchstaben umgeschrieben.
+
+console.log('Hey'.startsWith('H'));				Diese methode löst ein boolean aus. In diesem falle true da ein H in hey exestiert.
+
+
+
+
+
+
+
+Built-in Objects								In js gibt es eingebaute objekte wie console.
+
+Math.random()									Mit dem Math objekt kann man komplexere mathematische aufgaben lösen. Hier wird eine random zahl zwischen 0 und 1 gegeben.
+Math.random() * 100								Jetzt wird diese mal hundert genommen wobei eine dezimalzahl rauskommt.
+Math.floor(Math.random() * 100);				Mit der methode floor kann nun eine dezimalzahl runtergerundet werden.
+console.log(Number.isInteger(2017))				Hier wird ein boolean erstellt der nachschaut ob diese zahlt eine runde oder dezimalzahl ist. Dies ist TRUE
+
+
+
+
+
+
+English summery:
+
+Let’s take one more glance at the concepts we just learned:
+
+Data is printed, or logged, to the console, a panel that displays messages, with console.log().
+
+We can write single-line comments with // and multi-line comments between /* and */.
+
+There are 7 fundamental data types in JavaScript: strings, numbers, booleans, null, undefined, symbol, and object.
+
+Numbers are any number without quotes: 23.8879
+
+Strings are characters wrapped in single or double quotes: 'Sample String'
+
+The built-in arithmetic operators include +, -, *, /, and %.
+
+Objects, including instances of data types, can have properties, stored information. The properties are denoted with a . after the name of the object, for example: 'Hello'.length.
+
+Objects, including instances of data types, can have methods which perform actions. Methods are called by appending the object or instance with a period, the method name, and parentheses. For example: 'hello'.toUpperCase().
+
+We can access properties and methods by using the ., dot operator.
+
+Built-in objects, including Math, are collections of methods and properties that JavaScript provides.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Variables:										Variablen sind behälter für Werte die in gespeichert werden wie usernames accounts oder nummern. Kurzgesagt variablen bennen und specihern daten. Diese werden in memory gespeichert aka ram.
+
+
+Was mann mit Variablen machen kann:
+1: 												Variablem bennenen.
+2:												Speicher oder aktaualissieren der informationen in der variable.
+3:												Die informationen anfordern.
+
+Wichtig ist zu merken das variablem keine werte sind sonder sie nur speichern und mit einem namen auszeichnen.
+
+Var, let, const 								Das sind die keywords um variablem zu erstellen und erklären. Vor der ES6 konnte nur var benutzt werden doch jetzt sind let und const besser.
+
+
+VAR:
+var myName = 'Adrian';							
+var 											Var bezieht sich auf das ernnenen einer Variable.
+myName 											Mit myName wird der var ein namen ausgehädigt und wird in Camel casing geschrieben (Erstet wort klein danach immer groß).
+= 												Dies ist der zuordnungs operator und ordnet 'Adrian' der var myName zu.
+'Adrian';										Dies ist der name der var zugeordnet wird.
+
+Regeln für die bennenung der Variablen:			Diese dürfen nicht mit nummmern anfangen. Groß und kleinschreibung sollte beachtet werden. Macnhe wörter sind blacklistet: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
+
+LET:											Let variablen kann man umändern nachdem man ihnen ein Value gegeben hat.
+Tip:
+Es ist möglich let und var Variable keinen Wert zu geben welche dann undefined wäre und dann könnte man der variable wieder ein value geben. Beispiel:
+
+let myTest;
+
+console.log(myTest);
+// Output : undefined
+
+myTest = true;									Hiermit wird die value mitten im code geändert.
+// Output : true								Anderer Output.
+
+
+CONST:											Eine const variable kann verwendet werden wie eine let und var aber kann nicht geändert werden. Wenn man diese ändert kommt ein fehler. const muss auch immer defined sein sonst erscheint wieder ein error.
+
+
+
+
+
+
+
+Mathematical Assignment Operators				Diese sind operators die mit Variablen rechnen können.
+
+let w = 4;
+w += 1;											Hier wird der operator += benutzt und mit der variable w gerechnet.
+// Output 5										w ist jetzt 5
+
++=												Plus.
+-=												Minus.
+*=												Mal.
+/=												Geteilt.
+
+
+
+
+
+
+
+The Incement and Decrement Operator				Diese sind operator die die variable um ein erhöhen können und eins minus setzten.
+
+let w = 4;
+w++;											Hier wird der operator ++ benutzt und die zahlt eins höher zu setzten.
+// Output 5	
+
+let w = 4;
+w--;											Hier wird der operator -- benutzt und die zahlt eins niedriger zu setzten.
+// Output 3	
+
+
+
+
+
+
+
+String Concatention with Variables				Man kann mit Operatorn wie dem + , strings concatinaten aka verbinden.
+
+let favoriteAnimal = 'Cat';
+console.log('My favorite animal is a: ' + favoriteAnimal + '.')
+// Output: My favorite animas is a: Cat.
+
+
+
+
+
+
+
+String Interpolation							Dies ist eine methode um variablen in strings zu interpolieren aka einbinden. Dabei wird ein template literal benutzt. ${myName} und muss in `` eingehüllt sein.
+
+
+let myName = 'Adrian';
+let myCity = 'Bielefeld';
+
+console.log(`My name is ${myName}. 				Hier werden variablen in strings eingebunden mit templates `${meineVariable}`
+My favorite city is ${myCity}.`);
+
+
+
+
+
+
+
+typeof operator									Dieser operator kann anzeigen was für ein Data Type die variable ist.
+
+let aTest = 'i bims';
+console.log(typeof aTest);
+// Output is: string
+
+aTest = 21;										Wenn man die variable ändert wird das obere resultat gleich bleiben aber unten ist es jetzt eine nummer.
+console.log(typeof aTest);
+// Output is: number
+
+
+English summery:
+
+Let’s review what we learned:
+
+Variables hold reusable data in a program and associate it with a name.
+
+Variables are stored in memory.
+
+The var keyword is used in pre-ES6 versions of JS.
+
+let is the preferred way to declare a variable when it can be reassigned, and const is the preferred way to declare a variable with a constant value.
+
+Variables that have not been initialized store the primitive data type undefined.
+
+Mathematical assignment operators make it easy to calculate a new value and assign it to the same variable.
+
+The + operator is used to concatenate strings including string values held in variables
+
+In ES6, template literals use backticks ` and ${} to interpolate values into a string.
+
+The typeof keyword returns the data type (as a string) of a value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conditional statment							Dies sind conditionen einer sache die dann entscheiden was passieren soll.
+
+let trueFalse = false;
+
+if (true) {										Das If keyword erfüllt sachen wenn die condition in der klammer true oder false ist. Was nach dem If passiert wird mit einem code block {} eingehüllt.
+console.log('It worked');
+} else {										Dies ist ein else statement und wird ausgeführt wenn das if false ist. In diesem beispiel würde console Or did it ? printen. Jetzt ist die ein if...else statment und kann nun binäre entschedungen erfüllen aka ja oder nein fragen.
+console.log('Or did it ?');						
+}
+
+Comperison Operators							Diese operatoren sind dafür zuständig in conditionelen aussagen zu vergleichen. Die operatoren vergleicht den linken wert mit dem rechten. Diese können nur true oder false ausgeben.
+
+<												Kleiner als
+>												Größer als
+<=												Kleiner als oder gleich
+>=												Größer als oder gleich
+===												Gleich
+!==												Nicht gleich
+
+'booty' === 'bad'								Es ist auch möglich strings zu vergleichen.
+// False
+
+
+
+Logical operators								Diese operatoren fügen mehr logik in conditionale statements.
+
+&&												Dieser operator sorgt dafür das die boolean true wird wenn beide seiten true sind. Wenn eins false ist dann erzeugt es false.
+||												In diesem operator reich wenn nur eine seite aka sache true ist.
+!												Dieser operator tauscht true in false um und false in true.
+
+if (stopLight === 'green' && pedestrians === 0) {
+console.log('GO!');
+} else {
+console.log('Stop');
+}
+
+
+
+
+
+
+
+
+Truthy and Falsy								Manchmal muss man nachschauen ob eine Variable exestiert und truthy oder falsy ist.
+
+let myTest = 'Im here';							In diesem beispiel wird getestet ob diese Variable exestiert. Und ja das tut sie und deswegen ist sie truthy.
+if (myTest) {
+console.log(myTest);
+} else {
+console.log('Im not here :c');
+}
+
+let myTest = '';								Hier wäre die Variable falsy.		
+if (myTest) {
+console.log(myTest);
+} else {
+console.log('Im not here :c');
+}
+// Output Im not here :C
+
+Falsy variablen :
+0
+'' 
+""
+null
+undefinded
+NaN
+
+let defaultName;								Truthy und falsy kann in diesem beispiel eingesetzt werden um einem user eine personaliesierte nachricht zu geben aber der user hat nicht immer ein account. Dieser code prüft das und gibt dann aus was passieren soll.
+if (username) {									
+  defaultName = username;
+} else {
+  defaultName = 'Stranger';						Da der user kein username hat wird jetzt dem Stranger gegeben.
+}
+
+let defaultName = username || 'Stranger';		Der code kann oben gekürzt werden und ein short circuit evaluation benztzt werden. Dieser hat die gleiche funktion wie oben zu prüfen welcher fall weiter gegeben werden soll. Diese geht von links nach rechts.
+
+
+let tool = '';									Da keine value der variable tool gegeben wurde wird jetzt pen in der console eingefügt. Und hätte die variable ein wird der variable writingUtensil dies mitgeteilt und tool wird true und weitegegeben.
+
+let writingUtensil = tool || 'pen';
+
+console.log(`The ${writingUtensil} is mightier than the sword.`);
+
+
+
+
+
+
+
+
+Ternary Operator								Dies ist ein syntax um if...else statements kürzer zu machen.
+
+let favoritePhrase = 'Love That!';
+
+facoritePhrase === 'Love That!' ? console.log('I Love That!') : console.log('I dont love that!');
+
+
+if (favoritePhrase === 'Love That!') {			Oben würde das kürzen.
+  console.log('I love that!');
+} else {
+  console.log("I don't love that!");
+}
+
+
+
+
+
+
+
+
+
+Else if statements								Diese statements können so oft hintereinander benutzt werden wie mann möchte um complexere conditionnen zu machen. Else if wird so benutzt wenn eins false wird dann pringt es weiter und geht dann bis ganz nach unten.
+
+let season = 'summer';
+
+if (season === 'spring') {
+  console.log('It\'s spring! The trees are budding!');
+} else if (season === 'winter') {
+console.log('It\'s winter! Everything is covered in snow.');
+} else if (season === 'fall') {
+  console.log('It\'s fall! Leaves are falling!');
+} else if (season === 'summer') {
+  console.log('It\'s sunny and warm because it\'s summer!');
+} else {
+  console.log('Invalid season.');
+}
+
+
+
+
+
+
+
+The switch keyword								Dies ist ein statement das sehr viele aufeinanderfolgende else if statements  abkürtzt.
+
+let athleteFinalPosition = 'first place';		
+
+switch (athleteFinalPosition) {					Es wird angefangen switch auzurufen.
+  case 'first place':							Dann gibt man den case an welcher überprüft werden soll.
+  return 'You get the gold medal!';					Wenn der case true war wird dieser block ausgeführt.
+  break;										Nach jedem case sollte ein break eingeführt werden um auszusagen das aufgehört werden soll zu controllieren. Wenn man dies nicht tut werden alle command inerhalb ausgeführt.
+  case 'second place':
+  return 'You get the silver medal!);
+  break;
+  case 'third place':
+  return 'You get the bronze medal!';
+  break;
+  default:										Am ende jedes switch statements sollte der default value angegeben werden um zu sagen was passieren soll wen keine contionion true ist.
+  return 'No medal awarded.';
+  break;										Dies wird dann auch mit einem break beendet.
+}
+
+
+
+English summery:
+
+An if statement checks a condition and will execute a task if that condition evaluates to true.
+
+if...else statements make binary decisions and execute different code blocks based on a provided condition.
+
+We can add more conditions using else if statements.
+
+Comparison operators, including <, >, <=, >=, ===, and !== can compare two values.
+
+The logical and operator, &&, or “and”, checks if both provided expressions are truthy.
+
+The logical operator ||, or “or”, checks if either provided expression is truthy.
+
+The bang operator, !, switches the truthiness and falsiness of a value.
+
+The ternary operator is shorthand to simplify concise if...else statements.
+
+A switch statement can be used to simplify the process of writing multiple else if statements. The break keyword stops the remaining cases from being checked and executed in a switch statement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FUNCTIONS										Eine funktion ist die methode um daten reinzuschicken und wieder rauszuholen. Es gibt viele verschidene arten functionen zu erschaffen.
+
+ KEYWORD  IDENTIFIER
+function getReminder() {						Dies ist eine methode funktionen zu erschaffen. Die function decleration ist wie eine variable und benutzt erst das keyword und dann den identifier. Diese hat die eigenschaft zu hoisten, kurz gesagt kann man die function vor dem festsetzten benutzen aber dies wird eher ungern gesehen.
+console.log('Water the plants!');
+}
+
+getReminder();									Hiermit kann die funktion x beliebig mal aufgerufen werden. Diese führt dann den code block der funktion aus.
+
+
+function sayThanks(name) {						Funktionen können paramenter gegeben werden um sie weiterzuleiten in den code block um dann später ihnen die informationen zu geben.
+console.log('Thank you for your purchase'
++ name +'										Hier wird dann der untere paramenter mit dem oberen paramenter verbunden um dieser dann später die information zu geben was eingefügt werden soll.
+! We appreciate your business.');
+}
+
+sayThanks('Cole');								Hier wird jetzt dem paramenter die information gegeben was es jetzt in den code block weiter leiten wird.
+const = sayThanks('Cole');						Diese können auch in variablen gespeichert sein und werden weitergegeben.
+
+let user1 = 'Cole';
+sayThanks(user1);								Es können auch variablen benutzt werden um diesen an dies code blöcke weiterzugeben.
+// Output ...Cole...
+
+
+Default Parameters
+
+function greeting (name = 'stranger) {			Einem parameter kann eine default value gegeben werden falls was schiefgeht oder wir allgemeint eine default value machen wollen.
+console.log(`Hello, ${name}!`);
+}
+
+greeting('Nick');
+// Output Hello, Nick!
+
+greeting();
+// Output Hello, stranger!
+
+
+
+
+
+
+
+
+
+Return											Mit return können sachen aus dem funktions block wieder entnommen werden.
+
+function monitorCount(rows, columns) {
+return rows * columns;
+}
+
+const numOfMonitors = monitorCount(5, 4);		Hier wird monitorCount in die funktion geschickt und dann zum ergebniss.
+console.log(numOfMonitors);
+// 20
+
+
+
+
+
+
+
+
+Helper Functions								Helper funktionen arbeiten mit verscheidenen funktionen zusammen um große aufgaben übersichtlicher zu machen und fürs bessere debuggen aufzuteilen.
+
+function monitorCount(rows, columns) {			4. Hier angekommen werden sie jetzt durch die funktion geschickt.
+return rows* columns;							5. Jetzt werden die parameter ausgerechnet und jetzt wieder unter dem namen monitorCount(ausgerechnet) runter geschickt.
+}
+
+function costOfMonitors(rows, columns) {		2. Hier kommen die informationen an und werden in die funktion geschickt.
+return monitorCount(rows, columns) * 200:		3. Jetzt werden die parameter von monitorCount gefüllt und returnt aka in die obere funktion geschickt. 6. Hier wird der ausgerechnete wert mal 200 genommen und als costOfMonitors(ausgerechneter wert mal 200) retrunt.
+}
+
+const totalCost = costOfMonitors(5, 4);			1 .Hier werden jetzt die parameter von CostOfMonitors gesetzt welche jetzt eins höcher weitergeleitet werden. 7. Jetzt ist costOfMonitors(ergebniss) ausgerechnet und da es mit totalCost gleichgesetzt ist kann man diese abfangen. 
+
+console.log(totalCost);
+// Output 4000
+
+
+
+
+
+
+
+
+
+Function Expression								Dies sind funktionen die in einer expression aka variable bstimmt werden.
+
+		 IDENTIFIER		KEYWORD PARAMETER
+const plantNeedsWater = function(day) {			Funktiones expressions werden üblicherweise mit const gespeichert! Normalerweise wird in einer function expression der funktions name weggelassen da diese von der variable angegeben ist. Dies nennt sich eine anonyme funktion. Die funktion ist oft in der variable gespeichert um darauf zuzugreifen.
+if (das === 'Wednesday') {
+return true;
+} else {
+return true;
+}
+}
+
+plantNeedsWater('Tuesday');						So werden der funktion informationen für die parameter gegeben. Funktionen sind nicht hoisted also müssen in der reihenfolge oben nach unten passieren.
+// false
+
+Arrow Function									Dies ist eine abkürzung um funktionen zu schreiben.
+
+
+const plantNeedsWater = (day) => {				Mit dem => 'Fetten arrow' können funktionen abgeküzt werden. Es werden die parameter in () angegeben und dann mit dem pfeil ausgerüstet.
+if (das === 'Wednesday') {
+return true;
+} else {
+return true;
+}
+}
+
+
+
+
+
+
+Consice Body Arrow Functions					Es können funktionene noch mehr verkürzt werden. Und dafür exestieren zwei regeln :
+
+1.
+const functionName = () => {}					Wenn der parameter leer ist muss die klammer sein.
+
+const functionName = paramOne => {}				Wenn nur ein parameter exestiert muss keine klammer eingesetzt werden.
+
+const functionName = (paramOne, paramTwo) =>{}	Wenn mehrere parameter exestieren müssen klammern wieder benutzt werden.
+
+
+
+2.
+Singe line block
+const sumNumbers = number => number + number;	Dies ist eine abkürzung einer funktion die keine Curly klammern benötigt wenn es ein single line block ist aber wenn dies gemacht wird dann wird der wert automatisch returnt.
+
+Multi line block								Dies ist eine multiline die dieser oben gleicht.
+const sumNumbers = number => {
+const sum = number + number;
+return sum;										Dies wird in der single line gekürzt.
+}
+
+Beispiel : 
+
+const squareNum = (num) => {
+  return num * num;
+};
+
+const squareNum = num => num * num;				Hier wurden die klammern() um num weggenommen da dies nur ein parameter hat. Die Curly klammern {} wurden auch entfernt da es jetzt ein single line block ist und dadurch wurde return auch entfernt weil die curly klammern weg sind.
+
+
+
+Review Functions
+
+Give yourself a pat on the back, you just navigated through functions!
+
+In this lesson, we covered some important concepts about functions:
+
+A function is a reusable block of code that groups together a sequence of statements to perform a specific task.
+A function declaration :
+Diagram showing the syntax of a function declaration
+
+A parameter is a named variable inside a function’s block which will be assigned the value of the argument passed in when the function is invoked:
+
+JavaScript syntax for declaring a function with parameters
+To call a function in your code:
+Diagram showing the syntax of invoking a function
+
+ES6 introduces new ways of handling arbitrary parameters through default parameters which allow us to assign a default value to a parameter in case no argument is passed into the function.
+To return a value from a function, we use a return statement.
+To define a function using function expressions:
+defining a function expression
+
+To define a function using arrow function notation
+
+Function definition can be made concise using concise arrow notation:
+comparing single line and multiline arrow functions
+
+It’s good to be aware of the differences between function expressions, arrow functions, and function declarations. 
+As you program more in JavaScript, you’ll see a wide variety of how these function types are used.
+
+
+
+
+
+Scope:											Die idee von Scopes ist es wie man auf Variablen zugreifen kann. Manche variablen sind zugänglich von überall und manche nur im richtigen context.
+
+
+
+Block and scope:
+
+const city = 'New York City';					
+
+function logCitySkyline() {
+  let skyscraper = 'Empire State Building';		Diese funktion kann ohne probleme die city und skyscraper variable benutzen.
+  return 'The stars over the ' 
+  + skyscraper + ' in ' + city;
+}
+
+console.log(logCitySkyline());
+
+// Output The stars over the Empire State Building in New York City
+
+
+
+Global Scope:									Scopes im context wo unsere variblen gesetzt werden. Es gibt zwei orte in dennen variablen gesetzt werden, entwerder im block oder ausßerhalb. Globare scope variablen ( Global variables ) werden außerhalb des blockes gesetzt und es kann überall drauf zugegeriffen werden.
+
+
+const satellite = 'The Moon';					Dies sind globare variablen.
+const galaxy = 'The Milky Way';
+const stars = 'North Star';
+
+function callMyNightSky() {
+  return 'Night Sky: ' + satellite + 			Und hier wird darauf zugegriffen.
+  ', ' + stars + ', and ' + galaxy;
+}
+
+console.log(callMyNightSky());
+
+
+
+Block Scope:									Wenn eine variable in einem block difiniert wird dann kann darauf nur im block zugeriffen werden. Diese variablen nennt man auch Lovale variablen.
+
+function logVisibleLightWaves() {
+const lightWaves = 'Moonlight';					Auf diese Locale variable kann nur zwischen den {} zugegriffen werden.
+console.log(lightWaves);						
+}
+
+logVisibleLightWaves()							Hier wird die Variable ge logt da es in der funktion steht.
+console.log(lightWaves);						Und hier enteht ein refferenc error.
+
+
+
+
+
+Scope Pollution:								Man könnte sich denken das das erstellen von vielen Globalen variablen praktisch währe aber dies ist nicht der fall da das globale namespace zugemüllt wird und so lange bleibt bis das programm fertig ist. Dies sorgt auch für ungewollte probleme wenn varibalen falsch benutzt werden. Deswegen ost es wichtig so wenig globale variablen zu erstellen wie möglich.
+
+
+const satellite = 'The Moon';					Hier werden globale variablen gesetzt.
+const galaxy = 'The Milky Way';
+let stars = 'North Star';
+
+const callMyNightSky = () => {
+  stars = 'Sirius';								Hier wird die globale variable nicht mit let difiniert und ändert die globale variable unaufällig.
+	return 'Night Sky: ' + satellite + 			
+	', ' + stars + ', ' + galaxy;
+};
+
+console.log(callMyNightSky());
+console.log(stars);								Hier erwartet man dann das 'North Star' raus kommt aber es wird jetzt 'Sirius' outgeputtet.
+
+
+
+
+Practice Good Scoping:							Es ist good practice so wenig globale variablen und so viele block variablen zu benutzen um den code besser zu organisieren, ihn besser lesen zu können, besser zu maintainen und speicher (ram) zu sparren.
+
+
+const logSkyColor = () => {
+  const dusk = true;
+  let color = 'blue'; 							Hier wird die farbe blue definiert.
+  if (dusk) {
+    let color = 'pink';							Hier wird die variable geändert.
+    console.log(color); // pink					Damit diese hier pink ausgibt.
+  }
+  console.log(color); // blue 					Aber die oben gennante wird trozdem blau bleiben da die variable in den {} nicht raus kommt sondern ganz oben rausgezogen wird. Es ist aber besser die variable die pink wird einen eigenen variablen namen zu geben.
+};
+
+console.log(color); // ReferenceError
+
+
+
+
+
+
+English summery:
+
+Review: Scope
+In this lesson, you learned about scope and how it impacts the accessibility of different variables.
+
+Let’s review the following terms:
+
+Scope is the idea in programming that some variables are accessible/inaccessible from other parts of the program.
+
+Blocks are statements that exist within curly braces {}.
+
+Global scope refers to the context within which variables are accessible to every part of the program.
+
+Global variables are variables that exist within global scope.
+
+Block scope refers to the context within which variables that are accessible only within the block they are defined.
+
+Local variables are variables that exist within block scope.
+
+Global namespace is the space in our code that contains globally scoped information.
+
+Scope pollution is when too many variables exist in a namespace or variable names are reused.
+
+As you continue your coding journey, remember to use best practices when declaring your variables! Scoping your variables tightly will ensure that your code has clean, organized, and modular logic.
+
+
+
+
+Arrays:											Arrys sind eine methode um daten zu speichern wie eine liste. Arrays können alle daten typen speichern. Dazu sind sie nummeriert.
+
+
+
+Creat an Array:
+
+				3 Elements
+const hobbies = 								Arrays können mehrere daten typen gleichzeitig speichern und werden in [] gespeicher.
+['Coding', 'Kuddle', 'Skating'];
+
+
+
+
+
+Acessing Elemts:
+
+const famousSayings = 
+['Fortune favors the brave.', 					Jedes array hat ein index von 0 bis ~ welche benutzt werden können und einzelne sachen aus dem array zu ziehen.
+'A joke is a very serious thing.', 
+'Where there is love there is life.'];
+
+const listItem = famousSayings[0];				Mit famousSayings[] wird das element aus der variable gezogen und jetzt ist ´diese variable = Fortune favors the brave. da dies das erste element im array war.
+
+const hello = 'Hello World';					Es können auch einzelne buchstaben mit [] aus strings gezogen werden.
+console.log(hello[6]);
+// Output: W
+
+
+
+
+Update Elemets:
+
+let season = 
+['winter', 'spring', 'summer', 'fall'];
+
+season[3] = 'autumn';							Man kann auch einzelne elemente eines arrays ändern.
+// Output : 
+['winter', 'spring', 'summer', 'autumn'];
+
+
+Arrays with let and const:
+
+let condiments = 								
+['Ketchup', 'Mustard', 'Soya'];
+
+condiments[0] = 'Mayo';							Bei let variablen ist es möglich einzelne elemente zu ändern.
+console.log(condiments);
+// Output ['Mayo', 'Mustard', 'Soya']
+
+condiments = ['Mayo'];
+console.log(condiments);
+// Output ['Mayo'];								Und bei let kann man die variable komplett ändern nicht wie bei const.
+
+
+
+
+
+const utensils = 								
+['Fork', 'Knife', 'Chopsticks', 'Spork'];
+
+utensils[3] = 'Spoon';							Bei const ist es auch möglich die elemente im array zu ändern.
+console.log(utensils);
+// Output [ 'Fork', 'Knife', 'Chopsticks', 'Spoon' ];
+
+utensils = ['Knife'];							Doch es darf nach der bennenung mit const nur ein array bleiben und dies kann nicht geändert werden.
+console.lof(utensils);
+// Output Error geht nicht;
+
+
+
+The .length property:
+
+const objectives = 
+['Learn a new languages', 'Read 52 books', 
+'Run a marathon'];
+
+console.log(objectives.length);					Arrays haben eine eingebaute property namens length welche die anzahl der array items nennt.
+// Output 3
+
+
+
+
+
+
+The .push() Method:
+
+const itemTracker = 
+['item 0', 'item 1', 'item 2'];
+
+itemTracker.push('item 3', 'item 4');			Die .push() funktion ist eine funktion die elemente am ende eines arrays hinzufügt. Diese kann wie eine funktion aufgerufen werden da es eine funktion standartmäßig von js ist.
+
+console.log(itemTracker); 
+// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+
+
+
+
+The .pop() Method:
+
+const newItemTracker = 
+['item 0', 'item 1', 'item 2'];
+
+const removed = newItemTracker.pop();			Mit .pop() kann das letzte array element entfernt werden. Hier wird aber auch eine variable erstellt die gleich ist wie die letzt entfernte varibale ist also item 2;
+
+console.log(newItemTracker); 
+// Output: [ 'item 0', 'item 1' ]				Da oben .pop() aufgerufen wurde ist jetzt das letzte element weg.
+console.log(removed);
+// Output: item 2								Da oben die variable gleich das letzt element was entfernt werden soll ist, ist dies der output.
+
+
+
+
+More Array Methods:								Es gibt zwei arten von Array methoden: Mutierende und unmutierende  welche die array items für immer änder und welche sie nicht für immer ändern ändern.
+
+.shift();										Entfernt das erste array element.
+
+.unshift('item');								Fügt ein element am anfang der arrays hinzu.
+
+.slice(2, 5);									Slice schneidet das array an dem punk welches man bennant hat. Hier würden dann nur die elemente 2-5 angezeigt werden und der rest ausgeschnitten.
+
+.indexOf()										Hiermit findet man die index nummer eines elements im Array.
+
+
+
+
+Arrays and Functions:							Funktionen können auch benutzt werden um arrays zu mutieren und diese außerhalb von code  blöcken mutiert zu lassen.
+
+const concept = 
+['arrays', 'can', 'be', 'mutated'];
+
+function changeArr(arr){						2. Dann wird diese hier reingefügt.
+  arr[3] = 'MUTATED';							3. Jetzt wird hier als vierter stelle 'MUTATED' hinzugefügt.
+}
+
+changeArr(concept);								1. Hier wird das array in die funktion oben gepasst.
+console.log(concept);							4. Output ist jetzt [ 'arrays', 'can', 'be' 'MUTATED']
+
+
+function removeElement(newArr) {				6. Diese kommt dann hier rein.
+  newArr.pop();									7. Und es wird mit pop das letzt element entfernt.
+}
+
+removeElement(concept);							5. Dann wird hier das neue concept mit 'MUTATED' in die zweite funktion eingefügt.
+console.log(concept);							8. Output ist jetzt [ 'arrays', 'can', 'be' ] und ist automatisch außen auch mutiert.
+
+
+
+
+
+
+Nested Array:									Es ist möglich arrays in arrays zu speichern.
+
+
+const numberClusters = [[1, 2], [3, 4], [5, 6]];Hier werden arrays in arrays gespeicher.
+
+const target = numberClusters[2][1];			Und so greift man auf die 6 im array zu. Erst welche der der arrays und dann die nummer im array.
+
+console.log(target);
+// Output 6
+
+
+
+English summery:
+
+Review Arrays
+Nice work! In this lesson, we learned these concepts regarding arrays:
+
+Arrays are lists that store data in JavaScript.
+
+Arrays are created with brackets [].
+
+Each item inside of an array is at a numbered position, or index, starting at 0.
+
+We can access one item in an array using its index, with syntax like: myArray[0].
+
+We can also change an item in an array using its index, with syntax like myArray[0] = 'new string';
+
+Arrays have a length property, which allows you to see how many items are in an array.
+
+Arrays have their own methods, including .push() and .pop(), which add and remove items from an array, respectively.
+
+Arrays have many methods that perform different tasks, such as .slice() and .shift(), you can find documentation at the Mozilla Developer Network website.
+
+Some built-in methods are mutating, meaning the method will change the array, while others are not mutating. You can always check the documentation.
+
+Variables that contain arrays can be declared with let or const. Even when declared with const, arrays are still mutable. However, a variable declared with const cannot be reassigned.
+
+Arrays mutated inside of a function will keep that change even outside the function.
+
+Arrays can be nested inside other arrays.
+
+To access elements in nested arrays chain indices using bracket notation.
+
+
+
+
+
+
+
+LOOP:											Ein loop aka iteration ist ein tool in Js um eine instruction so lange auzuführen bis diese erfüllt ist.
+
+
+
+The For Loop:
+
+	 Initializazion	  
+for (let counter = 5; 							Dies ist ein for loop. Dieser benötigt 3 expressionen die mit ; getrennt werden. Erst wird eine iterator variable erstellt der dann startpunkt setzt.
+
+Stopping conditon
+counter < 11;									Danach kommt die stopping condition die aussagt wann gestoppt werden soll.
+
+Iteration statement
+counter++) {									Und dies ist ein iteration statement welche aussagt was geändert werden soll nach bei der iteration.
+
+console.log(counter>
+}
+
+Hier voll:
+for (let counter = 5; counter < 11; counter++) {
+  console.log(counter);
+}
+
+// Output : 5,6,7,8,9,10.
+
+
+
+
+
+Looping in Reverse:
+
+for 
+(let counter = 3; counter >= 0; counter--){		Hier wird rückwerts gezählt dafür setzt man in der Initalization den höchsten wert ein, setzt die stopping condition dann wann gestoppt werden soll, und zählt runter mit --
+  console.log(counter);
+}
+
+// Output 3,2,1,0
+
+
+
+
+
+
+Looping through Arrays:
+
+const vacationSpots = ['Poland', 'Japan', 'America'];
+
+for 																Hier wird ein for loop erstellt der ein array aka daten struktur durchläuft.
+(let i = 0; i < vacationSpots.length; i++) {						Es wird i typischerweise für index benutzt und 0 gesetzt. Es wir so lange geloopt bis die länge von array durch ist und deswegen .length.
+console.log
+('I would like to go to ' + vacationSpots[i]);						Hier wird dann i benutzt um durch die zahlen im loop zu gehen 0,1,2 und zu printen.
+}
+
+
+
+
+
+Nested Loops:
+
+const bobsFollowers = ['Adrian', 'Luca', 'Marius', 'Julia'];		Erste Array welches verglichen wird.
+const tinasFollowers = ['Adrian', 'Vanessa', 'Luca'];				Zweites Array welches verglichen wird.
+const mutualFollowers = [];											Array wo die gleichen freunde gespeichert werden.
+
+for (let i = 0; i < bobsFollowers.length; i++) {					Hier wird ein for loop erzeugt welche durch alle array elemente von bobs freunden geht. 1. Fängt bei 0 an.																	8. 	Geht eins weiter 1.
+	for (let j = 0; j < tinasFollowers.length; j++) {				Hier wird noch ein loop erstellt der durch alle freunde von tina geht. 					2. Fängt auch bei 0 an.		4. Geht dann ein weiter 1.		6. Geht eins weiter 2.	9. 	Fängt wieder bei 0 an.
+		if (bobsFollowers[i] === tinasFollowers[j]) {				Diese vergleicht dann jedes Arrays element miteinander									3. Vergleicht dann 0 mit 0.	5. Vergleicht 0 mit 1.			7. Vergleicht 0 mit 2.	10.	Vergleicht 1 mit 0.
+		mutual.Followers.push(tinasFollowers[j]);
+	
+		}
+	}
+}
+
+console.log(mutualFollowers);
+// Output: [ 'Adrian', 'Luca' ]
+
+
+
+
+
+The While loop:
+
+const cards ['diamond', 'spade', 'heart', 'club'];				Hier wird nach 'spade' gesucht.
+
+let currentCard = '';											Erstellte varibale womit verglichen wird.	
+
+while (currentCard !== 'spade') {								Die while loop wird so lange ausgeführ bis diese condition erfüllt wird. While loops sinda dafür da wenn man nicht genau weiß wie lange der loop gehen wird.
+currentCard = cards[Math.floor(Math.Random() * 4)];				Hier wird currentCard gleich gesetzt um mit der oberen condition zu vergeichen. Cards[zufällige zahl] gibt den index an womit oben verglicher werden soll.
+console.log(currentCard);										Hier wird geloggt welche zufällige index zahl ausgesucht wurde und zeigt das element im index an bis zufällig spades gekommen ist wodurch es dann stoppt.
+}
+
+
+
+Do ... While Statements:
+
+let cupsOfSugatNeeded = 200;
+let cupsAdded = 0;
+
+do {															Do ... While statements werden mindestens einmal ausgeführt und so lange bis die condition false ist.
+cupsAdded++;													Hier wird so lange 1 zu cupsAdded hinzugefügt bis es kleiner ist als cupsOfSugarNeeded.
+} while (cupsAdded < cupsOfSugarNeeded);
+
+
+
+
+
+The break Keyword:
+
+
+const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
+
+for (let i = 0; i < rapperArray.length; i++) {
+console.log(rapperArray[i])
+if (rapperArray[i] === 'Notorious B.I.G') {
+break;															Break kann benutzt werden um ein loop frühzeitig zu beenden bis eine gegebene condition erfüllt ist.
+}
+};
+console.log("And if you don't know, now you know.");
+
+
+
+
+English summery:
+
+Loops perform repetitive actions so we don’t have to code that process manually every time.
+
+How to write for loops with an iterator variable that increments or decrements
+
+How to use a for loop to iterate through an array
+
+A nested for loop is a loop inside another loop
+
+while loops allow for different types of stopping conditions
+
+Stopping conditions are crucial for avoiding infinite loops.
+
+do...while loops run code at least once— only checking the stopping condition after the first execution
+
+The break keyword allows programs to leave a loop during the execution of its block
+
+
+
+
+Higher order funktions:
+
+Intro:															Im programmieren erschaffen wir abstaktionen indem wir funktionen schreiben und diese immer wieder benutzen können. Zb wenn wir eine funktion sehen die zählBisDrei() heißt wissen wir was sie bewältigt ohne sie genau nachzuschauen. 
+
+Higher-order.functions:											Diese funktionen können funktionen als argumente aka input nehmen oder funktionen outputten. Dies ermöglicht größere abstaktionen um mehr modularen code zu schreiben welcher einfacher zu lesen ist und debuggen ist.
+
+
+
+
+
+
+Functions as Data:												Funktionen sind first class objects.
+
+
+
+const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {		Funktionen können wie daten benutzt werden indem man diese umbennent ohne den Source code kaputt zu machen.
+  for(let i = 1; i <= 1000000; i++) {
+    if ( (2 + 2) != 4) {
+      console.log('Something has gone very wrong :( ');
+    }
+  }
+}
+
+const is2p2 = checkThatTwoPlusTwoEqualsFourAMillionTimes;		Hier wird die funktion umbennant. Merke das dies nicht mit klammern getan wurde weil wir ja nur den funktions namen ändern wollen und nicht den wert der diese einimmt.
+
+is2p2();
+
+console.log(is2p2.name);										Funktionen sind objekte und können wie diese eigenschaften und methoden benutzen aka haben.
+
+
+
+
+Functions as Parameters:
+
+const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {    ]
+  for(let i = 1; i <= 1000000; i++) {					      |
+    if ( (2 + 2) != 4) {								      |
+      console.log('Something has gone very wrong :( ');	      |
+    }													      |
+  }														      |
+};														      |
+														      |
+														      |
+const timeFuncRuntime = funcParameter => {				      |
+  let t1 = Date.now();									      |-----------   Hier wird die funktion mit dem ergebnis von checkThatTwoPlusTwoEqualsFourAMillionTimes als argument als time2p2 gespeichert.
+  funcParameter();										      |
+  let t2 = Date.now();                                        |
+  return t2 - t1;                                             |
+};                                                            |
+															  |
+const time2p2 =												  |
+timeFuncRuntime(checkThatTwoPlusTwoEqualsFourAMillionTimes);  | 
+															  |
+console.log(time2p2);										  ]
+
+
+
+
+ 
+
+const addTwo = num => num + 2;								  ]
+															  |
+const checkConsistentOutput = (funcInput, value) => {		  |
+  if (funcInput(value) === funcInput(value)) {				  |
+    return funcInput(value);								  |
+  } else {													  |------------  Hier wird die funktion addTwo als argument benutzt neben eimem wert welche dann in die funktion checkConsistentOutput eingeführt wird und die argument funktion 2 mal ausführ vergleicht und wenn diese übereinstimmen dann die funktion mit dem wert zurückgibt. 
+    return 'This function returned inconsistent results';	  |
+  }															  |
+}															  |
+															  |
+console.log(checkConsistentOutput(addTwo, 20));				  ]
+
+
+
+
+
+
+
+English summery:
+
+Abstraction allows us to write complicated code in a way that’s easy to reuse, debug, and understand for human readers
+
+We can work with functions the same way we would any other type of data including reassigning them to new variables
+
+JavaScript functions are first-class objects, so they have properties and methods like any object
+
+Functions can be passed into other functions as parameters
+
+A higher-order function is a function that either accepts functions as parameters, returns a function, or both
+
+
+
+
+
+
+
+
+
+
+Introduction to Iterators:										Manchmal will man jedes item in einer einkaufsliste wissen und eine methode davon ist in einem for loop aber Js hat methoden die das einfacher machen.
+
+
+
+
+
+
+
+
+The .forEach() Method											Diese Methode wendet jede sache auf jedes array element an.
+
+
+const groceries = 
+['brown sugar', 'salt', 'cranberries', 'walnute']
+
+
+groceries.forEach(function(groceryItem) {						Hier ist einer der syntax um jede der array elemente aufzulisten und .forEach zu benutzen.
+console.log(' - ' + groceryItem);
+});
+
+
+Weitere syntax:
+
+groceries.forEach(groceryItem => console.log(' - ' + groceryItem));
+
+
+
+
+function printGrocery(element){
+console.log(element);
+}
+
+groceries.forEach(printGrocery);
+
+
+
+
+
+
+
+
+The .map()Method												Diese methode ist wie .forEach() nur das diese das return in einem neuen array speicher.
+
+const animals = 
+['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 
+'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+
+// Create the secretMessage array below
+const secretMessage = animals.map(letter => {					Hier wird eine variable mit der .map methode erstellt welche jeden anfangsbuchstaben von dem array animals nimmt und in der variable secretMessage speichert.
+  return letter[0];
+});
+
+console.log(secretMessage.join(''));
+// Output HelloWorld
+
+
+
+
+
+
+
+The .filter() Method											Diese Methode Speichert ihr ergebnis auch in einem neuen Array aber erst nachdem es einiege sachen gefiltert hat. Die elemente die true ergeben werden in dem neuen array alement hinzugefügt und die false nicht.
+
+
+const favoriteWords = 
+['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+
+
+// Call .filter() on favoriteWords below						Hier werdem die wörter gefiltert die kleiner sind als 7 buchstaben.
+const longFavoriteWords = favoriteWords.filter(word => {
+  return word.length > 7;
+});
+
+console.log(longFavoriteWords);
+
+
+
+
+
+
+
+The .findIndex() Method											Diese Methode findet die index nummer heraus von dem element welches wir suchen und true ist.
+
+
+
+const animals = 
+['hippo', 'tiger', 'lion', 'seal', 'cheetah', 
+'monkey', 'salamander', 'elephant'];
+
+
+const foundAnimal = animals.findIndex(anim => {
+  return anim === 'elephant';									Hier wird nach der index nummer gesucht von strings mit dem namen elephant.
+});
+
+
+const startsWithS = animals.findIndex(animalS => {
+  return animalS[0] === 's';									Und hier wird nach strings gesucht die mit s anfangen.
+});
+
+
+
+
+
+
+
+
+The .reduce() Method											Diese methode ist dafür da um durch die einzelnen elemente zu gehen und dahingehend zu reduzierenfo
+
+
+const newNumbers = [1, 3, 5, 7];
+
+const newSum = newNumbers.reduce((accumulator, currentValue) => {
+console.log('The value of accumulator: ', accumulator);
+console.log('The value of currentValue: ', currentValue);
+return accumulator + currentValue;
+}, 10);
+
+console.log(newSum);
+
+// Output :
+The value of accumulator:  10									Es wird in diesem bespiel erst die 10 genommen der als accumultor gesetzt wurde.
+The value of currentValue:  1									Dann wird im currentValue die erste position im array gespeichert.
+The value of accumulator:  11									Dann werden diese plus gerechnet wie oben festgelegt. Und diese bilden dann denn neuen accumulator.
+The value of currentValue:  3									Weitergehen wird die current value jetzt zum zweiten array element gestzt.
+The value of accumulator:  14									Und dies wird dann mit dem alten accumulator plus gerechnet usw....
+The value of currentValue:  5
+The value of accumulator:  19
+The value of currentValue:  7
+26																Das endergebnis ist das 26 und wird returnt.
+
+
+
+
+
+
+English summery:
+
+.forEach() is used to execute the same code on every element in an array but does not change the array and returns undefined.
+
+.map() executes the same code on every element in an array and returns a new array with the updated elements.
+
+.filter() checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.
+
+.findIndex() returns the index of the first element of an array which satisfies a condition in the callback function. It returns -1 if none of the elements in the array satisfies the condition.
+
+.reduce() iterates through an array and takes the values of the elements and returns a single value.
+
+All iterator methods takes a callback function that can be pre-defined, or a function expression, or an arrow function.
+
+You can visit the Mozilla Developer Network to learn more about iterator methods (and all other parts of JavaScript!).
+
+
+
+
+
+
+
+
+Objects:														Objekte sind im prinzip container die functionalität und zusammenhängende daten speichern.
+
+
+
+
+Creating Object Literals:										Objekte können wie alle anderen Data types in einer variabel gespeichert werden. Es gibt ein key und die value die dazugehört. Keys können alle daten strukturen haben sogar funktionen oder andere objekte.
+
+let fasterShip = {												Ein objekt wird mit {} gespeichert und benötigt ein key name und die value.
+  'Fuel Type': 'Turbo Fuel',									Ein komma, um die keys zu trennen.
+  color: 'silver'												Es muss der key nicht in 'Gänsefüßen' gesetzt werden wenn er keine speziellen buchstaben hat. 
+};
+
+
+
+
+
+Accessing Properties:
+
+
+let spaceship = {
+  homePlanet: 'Earth',
+  color: 'silver',
+  'Fuel Type': 'Turbo Fuel',
+  numCrew: 5,
+  flightPath: ['Venus', 'Mars', 'Saturn']
+};
+
+const crewCount = spaceship.numCrew;							Mit der dot notation ist es möglich auf spezifische objekte zuzugreifen. Hier wird eine variable erstellt und sie gleichgesetzt von einem objekt von spaceship.
+const planetArray = spaceship.flightPath;
+
+
+
+
+
+
+
+
+
+Bracket Notation:												Der zweite weg um key werte zuzugreifen.
+
+
+
+let spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5
+};
+spaceship['Active Duty'];   // Returns true						So wird auf die value vom key mit brackets zugegriffen.
+spaceship['Fuel Type'];   // Returns  'Turbo Fuel'
+spaceship['numCrew'];   // Returns 5
+spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
+
+
+
+let returnAnyProp = 											So ist es möklich mit objekten in funktionen zu arbeiten.
+(objectName, propName) => objectName[propName];
+
+returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
+
+
+
+
+
+
+
+
+
+
+Property Assignment:											Es ist möglich objekten sachen zu entfernen sie zu mutieren obwohl sie eine const sind und hinzuzufügen indem man entweder die dot notation oder brackets benutzt [] .
+
+
+
+const spaceship = {type: 'shuttle'};
+							
+							
+spaceship = {type: 'alien'}; 									Es kann kein ganz neues objekt erstellt werden da es  ein const ist.
+// TypeError: Assignment to constant variable.
+
+spaceship.type = 'alien'; 										Type ist jetzt alien
+// Changes the value of the type property
+
+spaceship.speed = 'Mach 5'; 									Ein neuer key mit value wurde hinzugefügt
+// Creates a new key of 'speed' with a value of 'Mach 5'
+
+delete spaceship.mission;  // Removes the mission property		Dieser key und value wird damit gelöscht.
+// Delets .mission key.
+
+
+
+
+
+
+
+
+
+Methods:														Methoden sind functionen in einem object. Wie zb Math ist das objekt und .floor() eine Methode.
+
+
+
+
+let retreatMessage = 
+'We no longer wish to conquer your planet. 
+It is full of dogs, which we do not care for.';
+
+const alienShip = {
+  retreat function () {											Hier wird eine methode in dem objekt alienShip erstellt. Diese kann mit function geschrieben werden aber wegen es6 muss dies nicht mehr getan werden.
+    console.log(retreatMessage);
+  },
+  takeOff () {													Hier ist ein neuerer weg für den syntax des schreibens einer methode.
+    console.log('Spim... Borp... Glix... Blastoff!');
+  }
+};
+
+alienShip.retreat();											Diese können dann wie zb Math.floor() aufgerufen werden.
+// Output: 
+We no longer wish to conquer your planet. 
+It is full of dogs, which we do not care for.
+
+alienShip.takeOff();
+// Output: 
+Spim... Borp... Glix... Blastoff!
+
+
+
+
+
+
+
+Nested Objects:													Es ist möglich objekte in objekten und dann diesen in Arrays usw zu speichern.
+
+
+let spaceship = {
+  passengers: [{name: 'Dave'}, {name: 'Sandra'}],
+  telescope: {
+    yearBuilt: 2018,
+    model: "91031-XLT",
+    focalLength: 2032 
+  },
+  crew: {
+    captain: { 
+      name: 'Sandra', 
+      degree: 'Computer Engineering', 
+      encourageTeam() { console.log('We got this!') },
+     'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
+  },
+  engine: {
+    model: "Nimbus2000"
+  },
+  nanoelectronics: {
+    computer: {
+      terabytes: 100,
+      monitors: "HD"
+    },
+    'back-up': {
+      battery: "Lithium",
+      terabytes: 50
+    }
+  }
+}; 
+
+const capFave = 
+spaceship.crew.captain['favorite foods'][0];					Hier wird des Captains liebslings essen in einer variabele gepsiechert und angesprochen.
+
+
+
+const firstPassenger = spaceship.passengers[0];					Und hier werden die passagiere die in einem aray als objekte gespeichert sind in einer variabele gespeichert.
+
+
+
+
+
+
+
+
+
+Pass By Reference:
+
+
+const spaceship = {
+  homePlanet : 'Earth',
+  color : 'silver'
+};
+
+let paintIt = obj => {
+  obj.color = 'glorious gold'									Hier wird wenn spaceship unten durchgepasst wurde das objekt in speicher angesprochen und erfolgreich geändert.
+};
+
+paintIt(spaceship);
+
+spaceship.color // Returns 'glorious gold'
+
+
+
+
+
+
+let spaceship = {
+  homePlanet : 'Earth',
+  color : 'red'
+};
+let tryReassignment = obj => {
+  obj = {														Hierhingehend wird der platz im speicher von spaceship weitergegeben aber nicht der speicher ort deren variablen.
+    identified : false, 
+    'transport type' : 'flying'
+  }
+  console.log(obj) 
+  // Prints {'identified': false, 'transport type': 'flying'}
+
+};
+tryReassignment(spaceship)
+// The attempt at reassignment does not work.					Und deswegen wird spacship nicht geändert.
+
+spaceship 
+// Still returns {homePlanet : 'Earth', color : 'red'};
+
+spaceship = {
+  identified : false, 
+  'transport type': 'flying'
+}; // Regular reassignment still works.
+
+
+
+
+
+
+
+
+
+Looping Through Objects:
+
+
+
+
+
+let spaceship = {
+    crew: {
+    captain: { 
+        name: 'Lily', 
+        degree: 'Computer Engineering', 
+        cheerTeam() { console.log('You got this!') } 
+        },
+    'chief officer': { 
+        name: 'Dan', 
+        degree: 'Aerospace Engineering', 
+        agree() { console.log('I agree, captain!') } 
+        },
+    medic: { 
+        name: 'Clementine', 
+        degree: 'Physics', 
+        announce() { console.log(`Jets on!`) } },
+    translator: {
+        name: 'Shauna', 
+        degree: 'Conservation Science', 
+        powerFuel() { console.log('The tank is full!') } 
+        }
+    }
+}; 
+
+// Write your code below
+for (let crewMember in spaceship.crew) {						Es ist möglich mit for in loops durch die objekte durchzugehen und diese dann etsprechend zu benutzen. Zuerst wird eine variable erstellt welche in einem bestimmten bereich beginnt und dann in diesem geloop wird.
+  console.log(`${crewMember}: 
+  ${spaceship.crew[crewMember].name}`)
+};
+
+for (let crewMember in spaceship.crew) {
+  console.log(`${spaceship.crew[crewMember].name}: 
+  ${spaceship.crew[crewMember].degree}`)
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+English summery:
+
+Let’s review what we learned in this lesson:
+
+Objects store collections of key-value pairs.
+
+Each key-value pair is a property—when a property is a function it is known as a method.
+
+An object literal is composed of comma-separated key-value pairs surrounded by curly braces.
+
+You can access, add or edit a property within an object by using dot notation or bracket notation.
+
+We can add methods to our object literals using key-value syntax with anonymous function expressions as values or by using the new ES6 method syntax.
+
+We can navigate complex, nested objects by chaining operators.
+
+Objects are mutable—we can change their properties even when they’re declared with const.
+
+Objects are passed by reference— when we make changes to an object passed into a function, those changes are permanent.
+
+We can iterate through objects using the For...in syntax.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Objects Into:										
+
+
+
+
+The this Keyword:											.this ermöglicht es einem auf objecte zuzugreifen die nicht im scope sind von zb einem funcktions key und value.
+
+
+
+
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  provideInfo() {
+    return 
+	`I am ${this.model} and my current 						Hier wird .this angewendet um aus dem scope von der funktion zu kommen und dafür auf die keys im robot objekt zuzugreifen.
+	energy level is ${this.energyLevel}. `
+  }
+};
+
+console.log(robot.provideInfo());
+
+
+
+
+
+
+
+Arrow Functions and this:
+
+
+
+
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet: () => {												Arrow funktionen in einem objekt können kein .this benutzen da diese sich mich einem schon exestierenden this zusammenbinden der im global scope exestiert. Der korrekte syntax um .this benutzen zu können wäre dann diet() {	
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); // Prints undefined
+
+
+
+
+
+
+
+
+Privacy:
+
+
+
+const bankAccount = {
+  _amount: 1000												Wenn man anderen developers zeigen will das eine property nicht direct geändert werden darf dann setzt mann ein _ davor. Diese ist änderbar aber weist nur darauf hin das sie nicht geändert werden soll.
+}
+
+
+
+const robot = {
+  _energyLevel: 100,
+  recharge(){
+    this._energyLevel += 30;
+    console.log(`Recharged! Energy is currently at ${this._energyLevel}%.`)
+  }
+};
+
+robot._energyLevel = 'hight'								Hier wurde eine ungewollte property in ein string geändert.
+
+
+robot.recharge();
+
+// Output : 
+Recharged! Energy is currently at hight30%.					Es ist stehts zu bedenken das wenn man mit manchen properties rumspielt das unerwartetefehler aufträten können wie hier.
+
+
+
+
+
+
+
+
+
+
+
+Getters:													Getters sind dafür da um funktionen wie propertries zu machen. Sie können auch aktionen an daten ausführen. Dazu dürfen sie nicht den gleichen namen haben.
+
+
+
+
+const robot = {
+  _model: '1E78V2',
+  _energyLevel: 100,
+  get energyLevel() {										Hier wird der prefix getter benutzt.
+    if (typeof this._energyLevel === 'number') {
+      return `My current energy level is ${this._energyLevel}`
+    } else {
+      return 'System malfunction: cannot retrieve energy level'
+    }
+  }
+};
+
+
+console.log(robot.energyLevel);
+
+
+
+
+
+
+Setters:													Setter sind methoden die bestehende values von propertirs in einem objekt ändern können.
+
+
+
+
+const robot = {
+  _model: '1E78V2',
+  _energyLevel: 100,
+  _numOfSensors: 15,
+  get numOfSensors(){										Dieser getter untersucht ob die sensoren eine nummer sind und returnt diese dann.
+    if(typeof this._numOfSensors === 'number'){
+      return this._numOfSensors;
+    } else {
+      return 'Sensors are currently down.'
+    }
+  },
+  set numOfSensors(num) {									Aber um die sensoren zu ändern müssen wir ein setter erstellen.
+    if (typeof num === 'number' && num >= 0) {				Hier wird überprüft ob der setter eine nummer ist und gleich oder größer als null ist.
+      this._numOfSensors = num;								Wenn dies der fall ist dann wird _numOfSensors gleich der input nummer gesetzt.
+    } else {
+      console.log('Pass in a number that is greater than or equal to 0')
+    }
+  }
+  
+};
+
+
+robot.numOfSensors = 100;									Hierdurch wird jetzt _numOfSensors 100 sein weil der setter dies macht.
+
+console.log(robot.numOfSensors);
+// Output: 100
+
+
+
+
+
+
+
+Factory Functions:											Factory funktionen sind dafür da um automatiesiert viele objekte zu generieren. Zb wenn man viele verschiedene zombies ertellen will.
+
+
+
+
+
+
+const monsterFactory = (name, age, 
+energySource, catchPhrase) => {								Hier können jetzt viele verschiedene parameter hinzugefügt werden und es wird ein obkejt mit diesen gefüllt.
+  return { 
+    name: name,
+    age: age, 
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    } 
+  }
+};
+
+
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare(); // 'BOO!'
+
+
+
+
+
+
+
+
+Property Value Shorthand:									In es6 wurde einiege verkürzungen hinzugefürg fürs setzen von properties für variablen auch gennant destructuring.
+
+
+
+
+const monsterFactory = (name, age) => {
+  return { 
+    name: name,
+    age: age
+  }
+};
+
+
+Dies wir zu :
+
+
+const monsterFactory = (name, age) => {
+  return { 
+    name,
+    age 
+  }
+};
+
+
+
+
+
+
+
+
+Destructured Assignment:									Wenn man key value pairs von einem objekkt in eine neue variable speichern will dann ist es möglich dies zu vereinfachen.
+
+
+
+
+
+
+
+const residence = vampire.residence; 
+
+Wird zu:
+
+const { residence } = vampire; 								Hier wird der key angesprochen welchen man in einer neuen variable speicher möchte.
+
+
+
+
+
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
+    },
+    fireLaser() {
+      console.log('Pew Pew');
+    },
+  }
+};
+
+const { functionality } = robot;							Hier wird functionality in einer neuen variable gespeichert.
+
+functionality.beep()										Und jetzt ist es sogar möglich deren methode über die variable zu benutzen.
+
+
+
+
+
+
+
+
+
+
+Built-in Object Methods:									In js gibt es viele verschiedene eingebaute Objekten methoden die man an objekten benutzen kann.
+
+
+
+
+
+
+const robot = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
+
+const robotKeys = Object.keys(robot);						Hier werden die keys in einem array gespeichert.
+
+const robotEntries = Object.entries(robot);					Und hier werden die keys und die values gespeichert.
+
+
+  const newRobot = 
+  Object.assign({laserBlaster: true, 
+  voiceRecognition: true}, robot);							Hier werden die keys und values von robot in einem neuen objekt gespeichert und mit 2 neuen key value pairs.
+
+
+
+
+
+English summery:
+
+The object that a method belongs to is called the calling object.
+
+The this keyword refers the calling object and can be used to access properties of the calling object.
+
+Methods do not automatically have access to other internal properties of the calling object.
+
+The value of this depends on where the this is being accessed from.
+
+We cannot use arrow functions as methods if we want to access other internal properties.
+
+JavaScript objects do not have built-in privacy, rather there are conventions to follow to notify other developers about the intent of the code.
+
+The usage of an underscore before a property name means that the original developer did not intend for that property to be directly changed.
+
+Setters and getter methods allow for more detailed ways of accessing and assigning properties.
+
+Factory functions allow us to create object instances quickly and repeatedly.
+
+There are different ways to use object destructuring: one way is the property value shorthand and another is destructured assignment.
+
+As with any concept, it is a good skill to learn how to use the documentation with objects!
+
+You’re ready to start leveraging more elegant code for creating and accessing objects in your code!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intermediate JavaScript:
+
+
+
+
+
+
+
+
+
+
+
+Introduction to Classes:									Klassen werden benutzt um gleiche objekte schnell zu produzieren und fleichen code zu vermeiden.
+
+
+
+Beispiel einer Klasse :
+
+class Dog {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+  get behavior() {
+    return this._behavior;
+  }   
+
+  incrementBehavior() {
+    this._behavior ++;
+  }
+}
+
+const halley = new Dog('Halley');
+console.log(halley.name); // Print name value to console
+console.log(halley.behavior); // Print behavior value to console
+halley.incrementBehavior(); // Add one to behavior
+console.log(halley.name); // Print name value to console
+console.log(halley.behavior); // Print behavior value to console
+
+
+
+
+
+
+
+
+
+
+
+Constructor:												Einer der größten unterschiede die klassen von objekten haben ist die contructor methode. Diese wird immer aufgerufen wenn eine neue instanz der klasse creiert wird.
+
+
+class Dog {
+  constructor(name) {										Dies ist der constructor.
+    this.name = name;
+    this.behavior = 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Instance:													
+
+
+
+
+class Dog {
+  constructor(name) {
+    this.name = name;
+    this.behavior = 0;
+  } 
+}
+
+const halley = new Dog('Halley'); 							Man creaiert eine neue instance einer Klasse indem man diese in einer neuen Variable speichert mit dem new keyword und der gewünschten klasse und contructor property ruft.
+// Create new Dog instance
+
+console.log(halley.name); 
+// Log the name value saved to halley
+// Output: 'Halley'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Methods:													Klassen methoden sind wie für objekte doch sie werden nicht mit kommas getrennt!
+
+
+
+
+
+Beispiel: 
+
+class Dog {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get behavior() {
+    return this._behavior;
+  }
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+}
+
+
+
+
+
+
+
+
+Method Calls:												Methoden werden ganz normal wie in Objekten aufgerufen und benutzt.
+
+
+
+Beispiel:
+
+console.log(surgeonCurry.name);
+surgeonCurry.takeVacationDays(3);
+console.log(surgeonCurry.remainingVacationDays);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inheritance :												Wenn man zwei klassen kreieren möchte mit vielen gleichen value pairs kann man eine superklasse machen und daraus children beziehen mit besonderheiten.
+
+
+
+Beispiel:
+
+class Animal {												Jetzt ist es möglich aus dieser klassen zwei unterklassen zu kreieren ub Katzen und Hunde wobei zb katzen eine propertie mehr hat aber die anderen aus der Superklasse bezieht.
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get behavior() {
+    return this._behavior;
+  }   
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+} 
+
+
+
+
+class Cat extends Animal {									Das extends keyword ist dafür zuständig eine erweiterung aka ein child von der Animal klasse zu machen. In dieser klasse sind auch die getter und methoden übernommen worden und können drauf zugeriffen werden. In den unterklassen können auch getter setter und methoden hinzugefügt werden.
+  constructor(name, usesLitter) {
+    super(name);											Das super keyword gibt den namen der cat klasse an die superklasse weiter und return diese und setzt den namen dann für die cat klasse. Super MUSS immer als erstes im constructor stehen um kein error zu machen! Im prinzip ist ein eine verbindung zur animal klasse die da verarbeitet wird und das ergebnis jetzt in der cat klasse gespeichert wird.
+    this._usesLitter = usesLitter;							Da hier eine neue property gewünscht ist muss diese neu verzeichnet werden.
+  }
+}
+
+
+
+
+
+
+
+
+
+Static Methods:												Wenn man in einer superklasse eine methode hinzufügen möchteund darauf von der klasse aus zugreifen will ist das static keyword perfekt.
+
+
+Beispiel:
+
+class Animal {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  static generateName() {									Hier mit dem static keyword kann nun von Animal und nur von Animal aus auf die methode zugerifen werden.
+    const names = 
+	['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];
+    const randomNumber = Math.floor(Math.random()*5);
+    return names[randomNumber];
+  }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+English summery:
+
+
+
+
+Classes are templates for objects.
+
+Javascript calls a constructor method when we create a new instance of a class.
+
+Inheritance is when we create a parent class with properties and methods that we can extend to child classes.
+
+We use the extends keyword to create a subclass.
+
+The super keyword calls the constructor() of a parent class.
+
+Static methods are called on the class, but not on instances of the class.
+
+
+
+
+
+
+
+Modules:														Modules sind wiederverwendbare stücke von code. Es gibt viele gründe warum module nützlich sind.
+
+
+const Airplane = {};											Um ein modul export fertig zu machen wird erst ein objekt erstellt.
+Airplane.myAirplane = 'StarJet';								Diesem werden dann values hinzugefügt.
+
+module.exports = Airplane;										Und hier wird mit dem NODE.js syntax das Airplane modul exportiert.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+require()														Mit require wird das modul in die datei importiert.
+
+
+
+
+
+const Airplane = require('./1-airplane.js');					Zuerst muss das mdul in eine variable gepseichert werden. Dann wird require mit dem path zum importierendem modul gesetzt.
+
+
+function displayAirplane() {									Hier wird jetzt eine function erstellt die das modul von oben console.log t
+  console.log(Airplane.myAirplane);
+}
+
+displayAirplane();												Output wird das Airplane objekt mit der property myAirplane geloggt.
+
+
+
+
+module.exports = {												Es ist auch möglich eine kollection von daten zu exportieren.
+  myAirplane: "CloudJet",
+  displayAirplane: function() {
+    return this.myAirplane;
+    }
+};
+
+
+
+const Airplane = require('./2-airplane.js');					Hier wird jetzt das objekt ohne namen inportiert aber unter dem const Airplane gespeicher welches jetzt hiermit aufgerufen wird wie unten:
+
+console.log(Airplane.displayAirplane());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Export default:												In ES6 wurde auch eine eigene export / import funktion hinzugefügt aber ist nicht mit node compatibel.
+
+
+
+const Airplane = {};
+
+Airplane.availableAirplanes = [
+  {name: 'AeroJet', fuelCapacity: 800}, 
+  {name: 'SkyJet', fuelCapacity: 500}
+  ];
+
+export default Airplane;									Diese methode ist vergleichbar mit der node methode. Es wird ein objekt hier exportiert.
+
+
+
+
+
+
+
+Import:
+
+
+
+import Airplane from './airplane';							Hiermit wird das objekt importiert.
+
+function displayFuelCapacity() {
+  Airplane.availableAirplanes.forEach(function(element){	Und drauf zugeriffen.
+    console.log(`Fuel Capacity of ${element.name}: 
+	${element.fuelCapacity}`)
+  });
+}
+
+displayFuelCapacity();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Named Exports:												Dies ist eine Methode um daten zu exportieren die in deren variablen gespeichert werden.
+
+beispiel :
+
+let specialty = '';
+function isVegetarian() {
+}; 
+function isLowSodium() {
+}; 
+
+export { specialty, isVegetarian };							Erst wird der prefix export benuzut und dann die zu exportierenden variablen.
+
+
+
+
+
+
+Named Imports:												Hiermit werden die exportieren variablen importiert. Wenn diese importiert sind dann ist es möglich komplett auf die variablen und functionen zuzugreifen.
+
+
+Beispiel:
+
+import { specialty, isVegetarian } from './menu';			Es können auch nicht erwünschte variablen einfach weg gelassen werde,
+
+console.log(specialty);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Export Named Exports:										Es ist nicht nötig bei named exports eine extra zeile zu erstellen. Man kann auch einfach export vor der bennenung der variable setztn damit diese exportiert wird.
+
+
+Beispiel:
+
+export let specialty = '';									Hier wird vor der decleration die variable exportiert.
+export function isVegetarian() {							Das gleiche bei funktionen.
+}; 
+function isLowSodium() {
+}; 
+
+
+Import Named Imports:										Hier wird dann der gleiche syntax benutzt.
+
+
+import { specialty, isVegetarian } from 'menu';
+
+
+
+
+
+
+
+
+
+
+
+
+
+Export as:												Das as keyword kann variablen umbennenen beim exportieren. Dies ist praktisch um variablen in der original datai asuführlich stehen zu haben und dann diese abzukürzen.
+
+Beispiel:
+
+let specialty = '';
+let isVegetarian = function() {
+}; 
+let isLowSodium = function() {
+}; 
+
+export 
+{ specialty as chefsSpecial, 							Hier wird as benutzt um die variablen damm nach dem exportierem unter einem neuen namen zu benutzen
+isVegetarian as isVeg, isLowSodium };
+
+
+
+
+
+
+
+
+Import as:												Um die umbennanten variablen zu importieren kann man jetzt diese unter derem neuen namen importieren:
+
+
+import { chefsSpecial, isVeg} from './menu';	
+import { isLowSodium as lowSod} from './menu';			Es ist auch möglich variablen während der imports umzubennenen mit dem as keyword.
+
+
+
+import * as Carte from './menu';						Und es ist möglich alle exportierten variablen gleichzeitig umzubennenen. Diese werden jetzt als eigenschaften von Carte gesehen.
+
+Carte.chefsSpecial;										So wird dann auf die umbennanten variablen zugegriffen (Da diese variablen in im export umbennant wurden werden sie auch so angesprochen wie umbennant.)
+Carte.isVeg();
+Carte.isLowSodium(); 									Da diese nicht umbennant wurde wird ihr originaler name verwendet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Combining Export Statements:							Das kombienieren vom default export und dem named exports ist unter einzelnen fällen gestatten wenn es nötig ist
+
+
+
+Beispiele:
+
+let specialty = '';
+function isVegetarian() {
+}; 
+function isLowSodium() {
+}; 
+function isGlutenFree() {
+};
+
+export { specialty as chefsSpecial, isVegetarian as isVeg };
+export default isGlutenFree;
+
+
+
+
+export let Menu = {};
+
+export let specialty = '';
+export let isVegetarian = function() {
+}; 
+export let isLowSodium = function() {
+}; 
+let isGlutenFree = function() {
+};
+
+export default isGlutenFree;
+
+
+
+
+
+
+
+
+
+Combining Import Statatements:						Wenn man will kann man auch import methoden kombienieren.
+
+
+
+
+
+Beispiel:
+
+import { specialty, isVegetarian, isLowSodium } from './menu';
+
+import GlutenFree from './menu';
+
+
+
+
+
+
+
+
+
+
+English summery:
+
+
+
+Modules in Node.js are reusable pieces of code that can be exported from one program and imported for use in another program.
+
+module.exports exports the module for use in another program.
+
+require() imports the module for use in the current program.
+
+
+ES6 introduced a more flexible, easier syntax to export modules:
+
+default exports use export default to export JavaScript objects, functions, and primitive data types.
+
+named exports use the export keyword to export data in variables.
+
+named exports can be aliased with the as keyword.
+
+import is a key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEBUGGING JAVASCRIPT CODE:
+
+
+
+Error Stack Traces:
+
+/decuments/app.js:1									Error location: Filename, Line Number
+
+ReferenceError: myVariable is not defined.			Error Type, Error Message
+
+
+
+
+
+
+
+JavaScript Error Types:
+
+
+
+SyntaxError; 										Dieser error erscheint wenn man was falsch geschrieben hat wie zb brackets nicht geschlossen oder klammern nicht zu gemacht. Oder falsche semicolons gesetzt.
+
+ReferenceError:										Dieser error gibt bescheid das man eine variable benutzt hat die nicht exestiert. Stelle sicher das alle variablen richtig gesetzt wurden.
+
+TypeError:											Dieser error wird erscheinen wenn man daten typen falsch benutzt. Wie zb string methode an einer nummer.
+
+
+
+
+
+
+
+
+
+
+
+Debugging Errors:
+
+
+
+
+
+
+Hier ist ein prozess für effizientes debuggen:
+
+1: Run den code. Indentiefieziere den error stack trace indem du den error typ, beschreibung und ort ausfindig machst.
+
+2: Gehe zum ort des Buggs und versuche mit den gesammelten informationen das problem ausfindig zu machen.
+
+3: Behebe den bug und run den code erneut.
+
+4: Wiederhole steps 1-3 solange der bug nicht mehr exestiert.
+
+
+
+
+
+
+
+
+
+
+Locating Silent Bugs:
+
+Eine gute methode um silent bugs zu finden ist es das geliebte console.log() zu benutzen um die einzelnen schritte durchzugehen um die problemzone zu finden.
+
+
+
+
+
+Debugging with console.log()
+
+1: Gehe zum anfang des problem codes. Log alle variablen, values und argumente. Wenn eine der sachen nicht richtig scheint skip zum schritt 3.
+
+2: Nach dem nächsten stück von logic logge die nächsten variablen, values und argumente. Wenn die logic nicht richtig arbeitet dann finde das problem und wenn alles normal scheint wiederhole diesen schritt solange bis du das problem findest.
+
+3: Fix den ausfindig gemachten bug und run den code. Wenn alles gut ist bist du fertig wenn nicht wiederhole step 2.
+
+
+
+
+
+
+
+
+
+
+Debugging Review:
+
+Is your code throwing errors? If so, read the error stack trace for the type, description, and location of the error. Go to the error’s location and try to fix.
+
+Is your code broken but not throwing errors? Walk through your code using console.log() statements. When unexpected results occur, isolate the bug and try to fix it.
+
+Did you locate the bug using steps 1 and 2, but can’t fix the bug? Consult documentation to make sure you are using all JavaScript functionality properly. If you are still stuck, Google your issue and consult Stack Overflow for help. Read solutions or post your own Stack Overflow question if none exist on the topic.
+
+It may take some time and practice, but this is how all developers work through their issues, so don’t give up, and you’ll be an expert in no time.
+
+
+
+
+
+
+
+
+
+Intro to Error Handling:
+
+
+
+
+
+
+
+Runtime Errors:
+
+Wenn ausgeführter code auf einer zeile ein error ausgibt dann nennt man dies einen Runtime Error. Code nach dem Error wird nicht mehr ausgeführt.
+
+
+
+
+
+
+
+
+
+
+Constructiong an Error:
+
+
+console.log(Error('Log an error'))					Hiermit ist es möglich ein eigenen error in der console zu loggen ohne das der code stoppt.
+
+
+
+throw Error('Something went wrong')					Mit dem throw keyword kann man eigene errors einbauen und den code nach dem error stoppen. Wie in einem Runtime error.
+
+
+
+
+
+
+
+
+
+
+
+
+The try...catch Statement:							Try catch statements sind dafür da errors abzufangen und den code weiter laufen zu lassen. Hiermit erwarten und handlen die errors.
+
+
+
+
+try {
+  throw Error('This error will get caught');		Dies ist der try block welcher dafür genutzt wird um code einzufügen vom welchen eine error zu erwarten ist.
+} catch (e) {
+  console.log(e);									Dies ist der catch block welcher den error in e speichert und dafür zuständig ist den error zu handlen.
+}
+// Prints: This error will get caught
+
+console.log('The thrown error that was caught in the try...catch statement!');
+// Prints: 'The thrown error that was caught in the try...catch statement!'
+
+
+
+
+
+													Try catch statements sind am meinsten praktisch wenn wir daten nicht in dem richtigen type bekommen und denn fehler erwarten und finden wollen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English summery : 
+
+How mistakes in programming leads to errors.
+
+Why errors are useful for developers.
+
+Errors will prevent a program from executing unless it is handled.
+
+How to create an error using the Error() function.
+
+How to throw an error object using the throw keyword.
+
+How to use the try...catch statement to handle thrown errors.
+
+Evaluating code in a try block to anticipate errors.
+
+Catching the error in a catch block to allow our program to continue running.
+
+Why the try...catch statement would be useful in a program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JAVASCRIPT PROMISES:
+
+
+
+
+
+
+
+
+
+
+
+
+What is a Promise ?									Primises sind objekte die das ende einer asynchronen operation representieren. Und dieses objekt kann in 3 status sein.
+
+Pending:											Dieser status ist der hauptstatus und sagt aus das die operation noch nicht abgeschlossen wurde.
+
+Fulfilled:											Die operation wurde erfolgreich beendet und hat ein aufgelösten wert.
+
+Rejected:											Die operation ist fehlgeschlagen und das promise hat ein grund für ein fehler. Der grund ist ofmals ein Error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Constructing a Promise Object:
+
+
+
+const executorFunction = 							Um ein Promise objekt benutzen zu können muss erst eine funktion erstellen werden welche als parameter der Promise variable angegeben wird. Es gibt zwei parameter. 
+(resolve, 											Resolve: wenn aufgerufen ändert es den promise status von panding zu fulfilled und der aufgelöste wert wird als argument gesetzt.
+reject) => { };										Reject: reject ist eine funktion die einen grund oder error als argument nimmt. Unter der haube wird der promises stauts von pending auf rejected gesetzt. Und das argument was in reject eingesetzt wurde wird der grund sein warum.
+
+const myFirstPromise = 
+new Promise(executorFunction);
+
+
+
+Beispiel :
+
+const executorFunction = (resolve, reject) => {
+  if (someCondition) {
+      resolve('I resolved!');
+  } else {
+      reject('I rejected!'); 
+  }
+}
+
+const myFirstPromise = 								Hier wird dann jetzt eine variable erstellt die einen neuen Promise constructed.
+new Promise(executorFunction);						Dieser wird jetzt die funktion von oben rein gestellt welche rejected oder resolved werden kann.
+
+
+
+Extra:												In diesem beispiel resolved oder reject myFirstPromise an eine simplen condition, im echten leben basieren die erbegnisse an asynchronen operationen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Node setTimeout() Function.						Diese funktion ist eine node API welche eine aufgabe nach einem bestimmten delay ausführt.
+
+
+const delayedHello = () => {
+  console.log
+  ('Hi! This is an asynchronous greeting!');
+};
+
+setTimeout											Die setTimeout funktion nmmt 2 argumente. 	
+(delayedHello, 										Der erste ist die funktion welche aufgerufen wird nach dem delay. 
+2000);												Die Zweite ist in wie vielen sekunden *mindestesn* die funktion aufgerufen werden soll.
+
+Extra :												*mindestes* bezieht sich darauf das im so genanten event-loop delayedHello erst in die reihenfolge nach dem synchronen code eingefügt wird. Was bedeutet das erst der synchrone code ausgefürt wird. Das bedeutet das die funktion erst später als in der angegebener zeit laufen wird.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consuming Promises:									Ein Promise ist am anfang Pending aber wir wissen genau das dies nicht für immer der fall sein kann und was machen wir *then* (dann).
+
+.then()												.then hat zwei callback funktionen als argumente. Diese callbacks nennen sich auch handlers. Der richtige handler wird ausgeführt wenn das Promise erledigt ist. Wichtig ist das man .then mit einem zwei oder keinem handler ausstatten kann welcher viel flexibilität bietet.	Wenn kein handler eingefügt wurde gibt er den gleichen wert an wie der Promise an dem er aufgerufen wurde.
+onFullfilled										Der erste handler ist onFulfilled welche der erfolg handler ist. Dieser sollte die logic für ein aufgelösten Promise haben.
+onRejected											Das ist der zweite handler welcher inReject gennant wird dies ist der fehlergeschlagene handler. Er sollte die logic von einem abgelehnten Promise haben.
+
+
+
+
+
+
+
+Beispiel: 
+
+const prom = 
+new Promise((resolve, reject) => {					Hier wird ein neuer Promise erstellt.
+  resolve('Yay!');									Dieser ist dann automatisch auf resolved gestellt.
+});
+
+const handleSuccess = 								Hier wird ein onFulfilled handler erstellt.
+(resolvedValue) => {
+  console.log(resolvedValue);
+};
+
+prom.then(handleSuccess); 							Dieser wird dann in .then eingefügt und wird dann ausgeführt weil der Promise resolved wurde.
+// Prints: 'Yay!'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Using catch() with Promises.
+
+
+Clean Code:											Ein weg um saubereren code zu schreiben ist ein prinzip namens separation of concerns. Dieses prenzip weist auf das dass seperieren von code und problemen besser ist als alles unter einen hut zu werfen.
+
+
+Beispiel:											Um hier .then in rejected und resolved zu trennen wird beim reject einfach null als ersten parameter gesetzt aber es gibt eine bessere methode.
+prom												
+  .then((resolvedValue) => {
+    console.log(resolvedValue);
+  })
+  .then(null, (rejectionReason) => {
+    console.log(rejectionReason);
+  });
+
+
+
+prom												Hier wird .catch() verwendet um den rejected handler als ersten parameter einzufügen.
+  .then((resolvedValue) => {
+    console.log(resolvedValue);
+  })
+  .catch((rejectionReason) => {
+    console.log(rejectionReason);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chaining Multiple Promises:							Ein oft benutzes muster im asynchronen programmieren sind multiple operationen die sich einander brauchen um ausgeführt zu werden. Dies geschieht in einer bestimmten reihenfolge. Dieses aufeinander folgende der promises nennt man Komposition aka composition.
+
+
+
+
+Beispiel:
+
+firstPromiseFunction()								Dies ist die erste Promise Funktion die aufgerufen wird.
+.then((firstResolveVal) => {						Hier wird eine anonyme funktion erstellt die als parameter dann onFulfilled gesetzt wird.
+  return secondPromiseFunction(firstResolveVal);	Diese anonyme funktion return die zweite Promise funktion aufgerufen mit dem weitergegebenen wert von der ersten Promise funktion (firstResolveVal). Jetzt ist firstResolveVal = secondPromiseFunction(firstResolveVal);
+})
+.then((secondResolveVal) => {						Hier wird dann die zweite promise ausgewertet. 
+  console.log(secondResolveVal);					Und die auswertung des zweiten promise wird dann gelogt.
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Avoiding Common Mistakes:
+
+
+Mistake 1: Nesting									Nesting ist einfach ein unschöner weg .then aufzulisten. Den code getrennt halten ist schöner und best practice.
+
+returnsFirstPromise()
+.then((firstResolveVal) => {
+  return returnsSecondValue(firstResolveVal)
+    .then((secondResolveVal) => {
+      console.log(secondResolveVal);
+    })
+})
+
+
+
+Mistake 2: Forgetting to Return						Return zu vergessen kann sehr frustrierent sein da dadurch kein error in der console entsteht. Dadurch werden die werte nicht weitergegeben und es wird der wert des ersten promises gegeben.
+
+returnsFirstPromise()
+.then((firstResolveVal) => {
+  returnsSecondValue(firstResolveVal)
+})
+.then((someVal) => {
+  console.log(someVal);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Using Promise.all()									Promise.all() ist dafür zuständig concurrancy  also das ausführen von mehreren asynchronen operationen glechzeitig zu leisten.
+
+
+Promise.all()										Promise.all() aktzeptiert ein arry aus promises als argument und gibt ein einzieges promise wieder. Dieses promise kann in zwei wegen enden:
+													- Wenn jedes promise im array aufgelöst wird dann gibt es ein array mit den werten der promises wieder.
+													- Wenmn eins der Promises im array rejected wird gibt es dann dieses mit dem grund wieder. Dieses verhalten nennt man dann failing fast.
+
+Beispiel:
+
+let myPromises = 									Hier wird das array von promesis als variable gespiechert.
+Promise.all([										
+returnsPromOne(), 
+returnsPromTwo(), 
+returnsPromThree()]);
+
+myPromises											Diese Variable wird jetzt benutzt um aktionen auszuführen jenachdem ob dieses array von promises fulfilled oder rejected wurde.
+  .then((arrayOfValues) => {
+    console.log(arrayOfValues);
+  })
+  .catch((rejectionReason) => {
+    console.log(rejectionReason);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English summery:
+
+
+Promises are JavaScript objects that represent the eventual result of an asynchronous operation.
+
+Promises can be in one of three states: pending, resolved, or rejected.
+
+A promise is settled if it is either resolved or rejected.
+
+We construct a promise by using the new keyword and passing an executor function to the Promise constructor method.
+
+setTimeout() is a Node function which delays the execution of a callback function using the event-loop.
+
+We use .then() with a success handler callback containing the logic for what should happen if a promise resolves.
+
+We use .catch() with a failure handler callback containing the logic for what should happen if a promise rejects.
+
+Promise composition enables us to write complex, asynchronous code that’s still readable. We do this by chaining multiple .then()‘s and .catch()‘s.
+
+To use promise composition correctly, we have to remember to return promises constructed within a .then().
+
+We should chain multiple promises rather than nesting them.
+
+To take advantage of concurrency, we can use Promise.all().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASYNC AWAIT:										Seit ES8 gibt es in js ein neuen syntax für asynchrone operationen. Diese fügen keine neuen funktionen hinzu aber verbessern den code.
+
+
+
+
+
+
+
+The async Keyword:									
+
+
+async function myFunc() {							Der async Schlüssenbegriff ist dafür zuständig funktionen zu schreiben die asynchrone aktionen ausführen.
+													Async funktionen geben immer ein Promise zurück und deswegen können wir traditionelen syntax benutzen wie .then .catch.
+}
+
+Async funktionen gibt in einer der drei wege wieder:
+
+- Wenn nichts aus der funktion wieder gegeben wird dann wird ein Promise wiedergegeben mit dem status resolved und wert von undefined.
+- Wenn ein non-promise wert wiedergegeben wird dann wird diese wert mit einem promise des resolved statuses wiedergegeben.
+- Wenn ein promise wiedergegeben wird dann wird einfach dieser wiedergegeben.
+
+
+Same shit :
+
+const myFunc = async () => {
+  // Function body here
+};
+
+myFunc();
+
+
+
+
+Beispiel:
+
+async function fivePromise() { 						Man spart sich sozusagen das ganze new Promise gedöns.
+  return 5;
+}
+
+fivePromise()
+.then(resolvedValue => {
+    console.log(resolvedValue);
+  })  // Prints 5
+
+
+
+
+
+
+
+
+
+
+
+
+The await Operator:									Async funktionen werden selten alleine benutzt. Da kommt der await operator ins spiel:
+
+await:												Das await keyword kann nur in einer async funktion benutzt werden. Da Promises in einer nicht bestimmten zeit aufgelöst werden kann man diese mit dem await keyword stoppen bis etwas bestimmtes ausgeführt wurde um dann weiter zu machen.
+
+
+
+Beispiel:
+
+const brainstormDinner = () => {
+  return new Promise((resolve, reject) => {
+  console.log(`I have to decide what's for dinner...`)
+  setTimeout(() => {
+    console.log('Should I make salad...?')
+    setTimeout(() => {
+      console.log('Should I make ramen...?')
+      setTimeout(() => {
+        console.log('Should I make eggs...?')
+        setTimeout(() => {
+          console.log('Should I make chicken...?')
+          resolve('beans')
+        }, 1000)
+      }, 1000)
+    }, 1000)
+  }, 1000)
+})
+}
+
+module.exports = brainstormDinner
+
+----------------------------------------------------
+
+const brainstormDinner = require('./library.js')
+
+
+// Native promise version:
+function nativePromiseDinner() {
+  brainstormDinner().then((meal) => {
+	  console.log
+	  (`I'm going to make ${meal} for dinner.`);
+  })
+}
+
+
+// async/await version:
+async function announceDinner() {
+  await brainstormDinner()						Hier wird await benutzt um die ausführung von brainstormDinner() abzuwarten.
+    .then((meal) => {
+      console.log
+	  (`I'm going to make ${meal} for dinner.`)
+    })
+												Hier wäre dann platzt für weiteren code der nach dem await passiert.
+}
+announceDinner();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Writing async Functions:						Wie wir gesehen haben verhindert await das ausführen von einer async funktion. await keyword nicht vergessen da es schwer fallen kann den fehler ausfindig zu machen weil die funktion weiterhin laufen wird.
+
+
+
+Beispiel:
+
+let myPromise = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Yay, I resolved!')
+    }, 1000);
+  });
+}
+
+
+async function noAwait() {
+ let value = myPromise();
+ console.log(value);
+}
+
+async function yesAwait() {
+ let value = await myPromise();
+ console.log(value);
+}
+
+noAwait(); // Prints: Promise { <pending> }		Hier wurde await vergessen und deswegen ist der Promise noch Pending.
+yesAwait(); // Prints: Yay, I resolved!			Und hier wurde drauf gewartet bis myPromise() einen aufgelösten wert hat.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Handling Dependent Promises:					Wo beim async...await die größte stärke steckt ist wenn mehrere asynchrone aktionen aufeinander basieren. Zb wenn wir bei einer Anfrage einer DataBase einiege Minuten warten müssen bevor wir die Daten bekommen.
+
+
+
+
+Beispiele des Nativen Promise syntax:
+
+
+
+function nativePromiseVersion() {
+    returnsFirstPromise()
+    .then((firstValue) => {
+        console.log(firstValue);
+        return returnsSecondPromise(firstValue);
+    })
+   .then((secondValue) => {
+        console.log(secondValue);
+    });
+}
+
+
+
+
+Beispiel einer async funktion:					Es wird durch die async funktion text gespaart und der code sieht eher aus wie synchroner welche besser gelesen werden kann und es ist einfacher werte wiederzugeben welche weiter hinten in der Kette sind.
+
+async function asyncAwaitVersion() {
+ let firstValue = await returnsFirstPromise();
+ console.log(firstValue);
+ let secondValue = await returnsSecondPromise(firstValue);
+ console.log(secondValue);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Handling Errors:
+
+try...catch:									Hiermit ist es möglich ein error der synchron oder asynchron ist zu finden. Einfacher zum debuggen. Merken: Es ist trozdem möglich .catch() mit einer async funktion zu nutzen, dies wird öfter mal im globalem scope benutzt und finale errors in complexen codes zu finden.
+
+async function usingTryCatch() {
+ try {
+   let resolveValue = 
+   await asyncFunction('thing that will fail');
+   let secondValue = 
+   await secondAsyncFunction(resolveValue);
+ } catch (err) {
+   // Catches any errors in the try block
+   console.log(err);
+ }
+}
+
+usingTryCatch();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

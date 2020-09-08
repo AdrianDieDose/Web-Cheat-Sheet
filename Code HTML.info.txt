@@ -1,0 +1,348 @@
+HTML Lesson 1:
+
+<body></body> Grandfather / Körper
+<dev></dev>	Father / Container
+<dev id=Beispiel><dev> Div gruppierungs id aka zuordnung (attribute)
+<h1 bis h6></h1> Überschrift größen
+<p></p> Normaler text
+<span></span> Text makieren für css
+<br> Neue zeile
+<em> Italic <strong> Bold
+
+<ul></ul> Unordered list / Aufzälung obergruppe ohne nummern mit punkten 
+<ol></ol> Ordered list / Aufzälung obergruppe nummeriert 1. 2. 3.
+<li></li> Aufzälung in einer <ul></ul> oder <ol></ol>
+
+<img > Einfügen von Bildern
+<img src="blabla.jpg"> src attribute für Bild quelle z.b URL
+<img alt="Bild beschreiben"> alt attribute und bild zu beschreiben was z.b nicht läd
+<video src="Video.mp4"></video> Video einfügen muss in den ersten brackets stehen
+<video src="Video.mp4" width="320" height="320" controls> Video not supported </video> Breite und höhe des videos in px und controls ui fürs video und zwischen den brackets nachricht wenn das video nicht funktioniert
+<video controls="" autoplay="" loop=""> Controls fügt play puse buttons ein, autoplay spielt das video automatisch ab und loop loopt das video
+
+
+English summery :
+HTML stands for HyperText Markup Language and is used to create the structure and content of a webpage.
+
+Most HTML elements contain opening and closing tags with raw text or other HTML tags between them.
+
+HTML elements can be nested inside other elements. The enclosed element is the child of the enclosing parent element.
+
+Any visible content should be placed within the opening and closing <body> tags.
+
+Headings and sub-headings, <h1> to <h6> tags, are used to enlarge text.
+
+<p>, <span> and <div> tags specify text or blocks.
+
+The <em> and <strong> tags are used to emphasize text.
+
+Line breaks are created with the <br> tag.
+
+Ordered lists (<ol>) are numbered and unordered lists (<ul>) are bulleted.
+
+Images (<img>) and videos (<video>) can be added by linking to an existing source.
+
+
+HTML Lesson 2:
+
+<!DOCTYPE html> Sagt aus dass das dokument eine html datei ist
+<html></html> Damit der browser weiß das es html ist was zwischen den zeilen ist
+<w> <title>Code HTML Info</title> </head>Das würde oben auf dem tab stehen</title> </head> Enthält metadata für die website wie denn titel vom browser tab
+
+<a href="Link url">MEIN LINK</a> Hyperlink erstellen und href attribute ist für die links zuständig
+<a href="Link" target="_blank"></a> Target attribute öffnet link im neuen Tab
+<a href="./Datei im gleichen Ordner.html">About Me</a>
+<a href="Link zum Bild"><img src="Bild.jpg"></a> Link kann im Bild enthatlen sein
+<a href="#div ID"</a> Bring einen an die Div ID position
+<h1 id="Beispiel">UWU</h1> IDs können fast jedem element gegeben werden
+<!-- --> Um makierungen zu setzen
+
+English summery:
+
+The <!DOCTYPE html> declaration should always be the first line of code in your HTML files. This lets the browser know what version of HTML to expect.
+
+The <html> element will contain all of your HTML code.
+
+Information about the web page, like the title, belongs within the <head> of the page.
+
+You can add a title to your web page by using the <title> element, inside of the head.
+
+A webpage’s title appears in a browser’s tab.
+
+Anchor tags (<a>) are used to link to internal pages, external pages or content on the same page.
+
+You can create sections on a webpage and jump to them using <a> tags and adding ids to the elements you wish to jump to.
+
+Whitespace between HTML elements helps make code easier to read while not changing how elements appear in the browser.
+
+Indentation also helps make code easier to read. It makes parent-child relationships visible.
+
+Comments are written in HTML using the following syntax: <!-- comment -->.
+
+
+
+HTML 3 Tables:
+
+<table></table> Tabelle erstellen
+<table> <tr></tr> </table> Tabellen reihe erstellen
+<table> <tr> <td>Data</td> </tr> </table> Tabellen daten zu geben und säulen zu erstellen
+<table> <tr> <th>Überschrift</th> </tr> </table> Überschrift für die tabelle
+<table> <tr> <th scope="row/col">Überschrift</th> </tr> </table> Attribute scope zuständing um auszusagen ob die überschrift für die zeile (col) oder reihe (row) sein soll
+<table> <tr> <td colspan="2">Data</td> </tr> </table> colspan attribute gibt der daten das recht sich über 2 (Zeilen Collums Säulen) auszuweiten
+<table> <tr> <td rowspan="2">Data</td> </tr> </table> rowspan attribute gibt der daten das recht sich über 2 reihen auszuweiten
+<table> <tbody> </tbody> <table> tbody trennt die tabelle
+<table> <thead> </thead> <table> thead trennt die überschrift
+<table> <tfoot> </foot> <table> tfood trennt die Fusszeile
+
+CSS:
+th, td{
+font size: 18px
+}
+
+English summery:
+
+The <table> element creates a table.
+
+The <tr> element adds rows to a table.
+
+To add data to a row, you can use the <td> element.
+
+Table headings clarify the meaning of data. Headings are added with the <th> element.
+
+Table data can span columns using the colspan attribute.
+
+Table data can span rows using the rowspan attribute.
+
+Tables can be split into three main sections: a head, a body, and a footer.
+
+A table’s head is created with the <thead> element.
+
+A table’s body is created with the <tbody> element.
+
+A table’s footer is created with the <tfoot> element.
+
+All the CSS properties you learned about in this course can be applied to tables and their data.
+
+Cheat sheet:
+https://www.codecademy.com/learn/learn-html/modules/learn-html-tables/reference
+
+
+
+
+HTML 4 FORMS:
+
+<form></form> Werkzeug um informationen zu bekommen
+<form action="/example.html" method="POST"> action attribute um auszusagen wo hin es geht. method attribute wie es passieren soll z.b POST
+
+<label for="help">Überschrift</label> Die überschrift für eine form und das klicken auf diese highlighted das eingabefeld und for attribute um darin anzuküpfen wie in einem input
+
+<input type="text"> Sagt aus wie die form gerendert werden soll hier z.b Text
+<input id="beispiel"> verbindet das lable mit dem input (for="123" id="123")
+<input name="username"> gibt dem input ein namen
+<input value="already pre-filled"> der wert ist schon ausgefüllt hier steht dann z.b already pre-filled
+<input type="text" name="username" id="username"> attribute Id muss zum input hinzugefügt werden um mit dem label assoziiert zu werden
+
+
+
+<input type="password"> attribute um password mit * zu schützen
+
+<input type="number" step="1"> attribute number um nur zahlen eingeben zu können, attribute step um rechts pfeile zu rendern nach oben oder unten
+
+<input type="range" min="1" max="5" step="0.5"> range attribute erstellt ein slider, min und max attribute gibt an wie hoh und tief der slider ist und step macht es dann smooth oder nicht smooth
+
+<input id="beispiel" name="dont know" type="checkbox" value=""beispiel> Checkbox attribute macht chechboxes und muss ein value zugeordnet werden wie die ID und wenn der gleiche name benutzt wird werden die checkboxes gegroupt
+
+<input id="beispiel" name="dont know" type="radio" value=""beispiel> attribute radio ist damit der user nur eine Sache auswählen kann.
+
+
+
+<select></select> Macht ein drop down menu
+<select name="bun" id="bun"></select> select muss ein name und id attribut gegeben werden
+<option value="bun">Sesam</option> option gibt die einzelnen optionen in einem dropdown window an und muss eine value beinhalten die zur id und namen passt.
+
+<input list="sauces" id="sauce" name="sauce"> list attribute wird mit der id von der datalist verbunden
+<datalist id="sauces"></datalist> eine datalist ist ein dropdown menu mit der option selber was reinzuschreiben und id von datalist wird mit der list von input verbunden, list attribute muss im imput stehen!
+<option value="Ketchup"></option> value wird mit der id vom input verbunden
+
+<textarea id="test" name="test" rows="3" cols="40"></textarea> Um ein größeres feld zu erstellen wo man was schrieben kann, row attribute erstellt die reihen und cols die spalten
+
+<input type="submit" value="Submit"> Erstellt ein abschick button um die informationen zu senden. Value attribut ist der name vom button
+
+
+
+English summery:
+
+The purpose of a <form> is to allow users to input information and send it.
+
+The <form>‘s action attribute determines where the form’s information goes.
+
+The <form>‘s method attribute determines how the information is sent and processed.
+
+To add fields for users to input information we use the <input> element and set the type attribute to a field of our choosing:
+
+Setting type to "text" creates a single row field for text input.
+
+Setting type to "password" creates a single row field that censors text input.
+
+Setting type to "number" creates a single row field for number input.
+
+Setting type to "range" creates a slider to select from a range of numbers.
+
+Setting type to "checkbox" creates a single checkbox which can be paired with other checkboxes.
+
+Setting type to "radio" creates a radio button that can be paired with other radio buttons.
+
+Setting type to "list" will pair the <input> with a <datalist> element.
+
+Setting type to "submit" creates a submit button.
+
+A <select> element is populated with <option> elements and renders a dropdown list selection.
+
+A <datalist> element is populated with <option> elements and works with an <input> to search through choices.
+
+A <textarea> element is a text input field that has a customizable area.
+
+When a <form> is submitted, the name of the fields that accept input and the value of those fields are sent as name=value pairs.
+
+Using the <form> element in conjunction with the other elements listed above allows us to create sites that take into consideration the wants and needs of our users. Take the opportunity to take what you’ve learned, and apply it!
+
+Cheat sheet : https://www.codecademy.com/learn/learn-html/modules/learn-html-forms/reference
+
+
+
+HTML 5 FORMS:
+<input required> required attribute sagt aus das man etwas eingeben MUSS
+<input type="number" min="1" max="5" required> min und max attribute gibt an wie die min und max vom eingegebenen sein darf
+<input id="username" name="username" type="text" required minlength="3" maxlength="15">  minlength und maxlength attribute gibt an wie groß oder klein ein text sein darf
+<input id="username" name="username" type="text" required minlength="3" maxlength="15" pattern="[a-zA-Z0-9]+"> pattern attribute sorgt dafür das der user nur bestimmte sachen eingeben kann die mit regex vorgegeben sind !
+
+English summery:
+Let’s quickly recap:
+
+Client-side validations happen in the browser before information is sent to a server.
+
+
+Adding the required attribute to an input related element will validate that the input field has information in it.
+
+Assigning a value to the min attribute of a number input element will validate an acceptable minimum value.
+
+Assigning a value to the max attribute of a number input element will validate an acceptable maximum value.
+
+Assigning a value to the minlength attribute of a text input element will validate an acceptable minimum number of characters.
+
+Assigning a value to the maxlength attribute of a text input element will validate an acceptable maximum number of characters.
+
+Assigning a regex to pattern matches the input to the provided regex.
+
+
+If validations on a <form> do not pass, the user gets a message explaining why and the <form> cannot be submitted
+
+
+HTML Sematic:
+
+Sematics sind die ordnung verschiedenen bereiche im html code. Statt <div>s zu benutzen unterteilt man den code in <header> <main> <footer> <nav>
+
+<header> Kopfteil enthält die überschrift und den oberen teil der website
+<nav> Beinhaltet navigationsbereiche wie tables und forms
+<main> Beinhaltet die Hauptinformation der Website wie den Hauptartikel.
+<footer> Der footer schließt informationen ein wie copyright kontaktinformationen terms of use Site Map refrences
+
+<section> Beinhaltet informationen mit dem gleichen Thema und ursprung wie und wir benutzt in headings chapters documents
+<article> Artikel beinhalten content wie Articels blogs comments magazines. articles können in section sein oder sections beinhalten
+
+<aside> Beinhaltet informationen die nicht so wichtig sind wie der main atricel und wird benutzt in: Bibliographies, Endnotes, Comments, Pull quotes, Editorial sidebars, Additional information
+
+<figure> Beinhaltet Bilder, Illustrationen, Diagramme, Code snippets, 
+<figcaption> Ist inhalten in figure um eine Bildbeschriftung zu erzeugen die zusammen mit figure moved
+
+<audio controls> Wird benutzt um videos aber eher nur audio einzufügen. Attribute kommen in audio rein
+<source> Kommt zwischen <audio> und benutzt attribute wie src="" und type="" um die sound Datei anzugeben und um den typ (mit type="audio/mp3") der datei zu bestimmen. Sollte immer gemacht werden damit der browser weiß was zu tun ist.
+
+<embed src="your.gif"> self closing tag das jede form von media beinhalten kann wie gifs etc.
+
+
+English summery:
+Semantic HTML introduces meaning to a page through specific elements that provide context as to what is in between the tags.
+
+Semantic HTML is a modern standard and makes a website accessible for people who use screen readers to translate the webpage and improves your website’s SEO.
+
+<header>, <nav> , <main> and <footer> create the basic structure of the webpage.
+
+<section> defines elements in a document, such as chapters, headings, or any other area of the document with the same theme.
+
+<article> holds content that makes sense on its own such as articles, blogs, comments, etc.
+
+<aside> contains information that is related to the main content, but not required in order to understand the dominant information.
+
+<figure> encapsulates all types of media.
+
+<figcaption> is used to describe the media in <figure>.
+
+<video>, <embed>, and <audio> elements are used for media files.
+
+gif
+
+
+Css und html 1:
+<h1 class="example bold"></h1> classen können mehrere seperate namen haben und werden mit einem leerzeichen getrennt und können in css getrent benutzt werden
+
+Classen sollten allgemein bezogen werden auf größere abschnitte des codes während ids nur auf einzelne elemente bestimmt sind. ( In css werden ids vor classen und tags vorgezogen)
+
+
+
+If you want to challenge yourself:
+
+Create a form with multiple fields that accept user input.
+Add two separate sets of radio buttons or checkboxes.
+Search how to add placeholder (hint hint) to an input field. A placeholder shows ups when the field has no value, it disappears after the user types or selects something in the field.
+
+RegEx ÜBEN! https://regexr.com/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Geile farben hex FF0EF1 to FFFF00
+GOOD to know:
+Div ist für generische unterteilung (container) und section für geschlossene elemente
+The difference between an ID and a class is that an ID can be used to identify one element, whereas a class can be used to identify more than one.
